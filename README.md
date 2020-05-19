@@ -1,6 +1,6 @@
 # Grupo 2 - Proyecto Integrador - Mitoy
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://raw.githubusercontent.com/germans208/grupo_2_mitoy/master/public/images/logos/logo-180x180.png)
 
 ------------
 **Integrantes**
