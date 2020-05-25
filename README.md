@@ -1,6 +1,6 @@
 # Grupo 2 - Proyecto Integrador - Mitoy
 
-![](https://raw.githubusercontent.com/germans208/grupo_2_mitoy/master/public/images/logos/logo-180x180.png)
+![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/logos/logo-180x180.png)
 
 ------------
 **Integrantes**
