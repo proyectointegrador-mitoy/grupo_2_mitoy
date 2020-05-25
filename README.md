@@ -57,9 +57,15 @@
 
 ### Carrito de compras
 
+![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/wireframe/wireframe-carrito.jpeg)
+
 ### Formulario de registro
 
+![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/wireframe/wireframe-registro.jpeg)
+
 ### Formulario de carga de producto (para el administrador) 
+
+![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/wireframe/wireframe-admin-producto.jpeg)
 
 
 
