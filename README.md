@@ -29,11 +29,11 @@
 
 	https://www.elmundodeljuguete.com.ar/
 
-2. Jugueteria Cebra: Este tambien es un gran referente por ser un lider en venta de juguetes y ofrecer un gran servicio post venta.
+2. Jugueteria Cebra: Este tambien es un gran referente por ser un lider en ventas de juguetes y ofrecer un gran servicio post-venta.
 
 	https://cebra.com.ar/
 
-3. Mercado Libre: gran versatilidad y lider en la experiencia en venta de productos.
+3. Mercado Libre: Lider indiscutido con gran versatilidad y una excelente experiencia en venta de productos.
 
 	https://www.mercadolibre.com.ar/ 
 
@@ -49,7 +49,7 @@
 
 ### Home
 
-	![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/wireframe/wireframe-home.jpeg)
+![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/wireframe/wireframe-home.jpeg)
 
 ### Detalle de producto
 
