@@ -5,8 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // ************ Route System require and use() ************
-var indexRouter = require('./routes/index');
+var mainRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -21,8 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 
 // ************ WRITE YOUR CODE FROM HERE ************
-app.use('/', indexRouter); // Rutas main
+app.use('/', mainRouter); // Ru
 app.use('/users', usersRouter);// Rutas /users
+app.use('/products', productsRouter);// Rutas /products
 
 
 

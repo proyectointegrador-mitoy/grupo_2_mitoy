@@ -1,0 +1,251 @@
+/* ====================
+- Imports
+==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* ====================
+- General
+==================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    background: #ebebeb;
+}
+
+/* ====================
+- Header
+==================== */
+
+header {
+    background-color: #EAC926;
+    padding-top: 15px;
+}
+
+header .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header .container a.logo img {
+    height: 37px;
+}
+
+header .container form {
+    width: 60%;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px;
+    background-color: white;
+    padding: 0 9px;
+}
+
+header .container form input {
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+header .container form input:focus {
+    outline-color: red;
+}
+
+header .container form button {
+    border: none;
+    background: none;
+    margin: 8px 0;
+    border-left: 1px solid #ebebeb;
+    color: #666;
+}
+
+header .container p.cuotas {
+    width: 100%;
+    text-align: center;
+    margin: 14px 0;
+}
+
+header .container p.cuotas i {
+    padding: 0;
+}
+
+header .container nav {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+header .container nav button.burger {
+    border: none;
+    border-radius: 3px;
+    padding-top: 2px;
+    background: #03264c;
+    color: white;
+}
+
+header .container nav ul.menu-productos, header .container nav ul.menu-usuarios {
+    display: none;
+}
+
+header .container nav ul li a {
+    color: rgba(0, 0, 0, 0.7);
+    transition: color 0.1s ease-in-out;
+}
+header .container nav ul li a:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+@media (min-width: 768px) {
+    header .container form {
+        width: 45%;
+    }
+
+    header .container p.cuotas {
+        width: 25%;
+        margin-top: 0;
+        text-align: right;
+    }
+
+    header .container nav button.burger {
+      display: none;  
+    }
+    header .container nav {
+        justify-content: space-between;
+    }
+    header .container nav ul.menu-productos, header .container nav ul.menu-usuarios {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    header .container nav ul li {
+        margin-right: 10px;
+    }
+    header .container nav ul li:last-child {
+        margin: 0;
+    }
+
+}
+
+
+/* ====================
+- Section productos
+==================== */
+
+section.ultimos-vistos {
+    margin-top: 20px;
+}
+section.ultimos-vistos .container {}
+section.ultimos-vistos .container h2 {}
+section.ultimos-vistos .container .row {}
+section.ultimos-vistos .container .row article {
+    display: flex;
+}
+section.ultimos-vistos .container .row .producto-wrapper {
+    background: white;
+    border-radius: 3px;
+    padding: 10px;
+}
+section.ultimos-vistos .container .row .producto-wrapper img {
+    width: 100%;
+}
+section.ultimos-vistos .container .row .producto-wrapper .text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+    height: 70px;
+    border-top: 1px solid #ebebeb;
+}
+section.ultimos-vistos .container .row .producto-wrapper .text-wrapper h3 {
+    margin-bottom: 0;
+}
+section.ultimos-vistos .container .row .producto-wrapper .text-wrapper h4 {
+    margin-bottom: 0;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #39b54a
+}
+section.ultimos-vistos .container .row .producto-wrapper .text-wrapper .camioncito {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #39b54a;
+    padding: 9px;
+    color: #39b54a;
+}
+
+/* ====================
+- Footer
+==================== */
+
+/* ====================
+- Section productos
+==================== */
+
+section.ofertas {
+    margin-top: 20px;
+}
+section.ofertas .container {}
+section.ofertas .container h2 {}
+section.ofertas .container .row {}
+section.ofertas .container .row article {
+    display: flex;
+}
+section.ofertas .container .row .producto-wrapper {
+    background: white;
+    border-radius: 3px;
+    padding: 10px;
+}
+section.ofertas .container .row .producto-wrapper img {
+    width: 100%;
+}
+section.ofertas .container .row .producto-wrapper .text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+    height: 70px;
+    border-top: 1px solid #ebebeb;
+}
+section.ofertas .container .row .producto-wrapper .text-wrapper h3 {
+    margin-bottom: 0;
+}
+section.ofertas .container .row .producto-wrapper .text-wrapper h4 {
+    margin-bottom: 0;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #39b54a
+}
+section.ofertas .container .row .producto-wrapper .text-wrapper .camioncito {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #39b54a;
+    padding: 9px;
+    color: #39b54a;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: elProducto.name }) %>
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+
+	<!-- product detail -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title"><%= elProducto.name %></h2>
+			</div>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<img src="/images/products/<%= (elProducto.image != undefined) ? elProducto.image : "default-image.png" %>" alt="product image" class="product-detail-img">
+					<p class="product-detail-description">
+						<%= elProducto.description %>
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title"><%= elProducto.name %></h2>
+
+							<p class="product-detail-price">
+								$ <%= elProducto.price %>
+							</p>
+
+						<a href="#" class="buy-now-button">ANADIR AL CARRITO</a>
+						<hr>
+
+						<a href="/products/edit/<%= elProducto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="/products/delete/<%= elProducto.id %>?_method=delete" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product detail -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+
+</body>	
+</html>
