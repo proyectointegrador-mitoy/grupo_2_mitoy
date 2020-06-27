@@ -81,6 +81,10 @@ const controller = {
 				res.redirect('/products?status=ok')
 			}
 		}	
+	},
+
+	shopping: (req, res) => {
+		res.render('shopping');
 	}
 };
 

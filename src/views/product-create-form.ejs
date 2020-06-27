@@ -10,18 +10,29 @@
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Alta de un Producto</h2>
+					<h2 class="products-title">Carga de Productos</h2>
 				</div>
 			</div>
 			<div class="col-12">
 				<form action="" method="POST">
 					<div class="row product-detail">
 						<div class="col-12 col-md-6">
-							<label for="name" class="form-label">Nombre del producto:</label>
+							<label for="name" class="form-label">Nombre:</label>
 							<input type="text" id="name" name="name" placeholder="Ej: juguete 1" class="form-input">
 						</div>
+
 						<div class="col-12 col-md-6">
-							<label for="price" class="form-label">Precio del producto:</label>
+							<label for="material" class="form-label">Material:</label>
+							<select name="material" id="material" class="form-input">
+								<option value="">Elegí un material</option>
+								<option value="madera">Madera</option>
+								<option value="Carton">Carton</option>
+								<option value="plastico">Plastico</option>
+								<option value="plastico">otros</option>
+							</select>
+						</div>						
+						<div class="col-12 col-md-6">
+							<label for="price" class="form-label">Precio:</label>
 							<input type="text" id="price" name="price" placeholder="Ej: 999" class="form-input">
 						</div>
 						<div class="col-12 col-md-6">
@@ -36,12 +47,16 @@
 								<option value="visited">Últimos agregados</option>
 							</select>
 						</div>
+						<div class="col-12 col-md-6">
+							<label for="Edad" class="form-label">Edad:</label>
+							<input type="text" id="Edad" name="Edad" placeholder="Ej: 10" class="form-input">
+						</div>						
 						<div class="col-12">
 							<label for="description" class="form-label">Descipción:</label>
 							<textarea name="description" id="description" class="form-input"></textarea>
 						</div>
 						<div class="col-12">
-							<button type="submit" class="buy-now-button">Guardar producto</button>
+							<button type="submit" class="buy-now-button">Guardar</button>
 						</div>
 					</div>
 				</form>
