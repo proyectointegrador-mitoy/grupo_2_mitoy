@@ -20,4 +20,4 @@
 	#1 El grupo coordinó la primera parte con una reunión que votamos los productos del e-commerce, a quienes apuntaban y cual el diferencial, se tiraron ideas y votamos por los juguetes personalizables y ecológicos. 
     #2 Se hizo el logo y votamos por instagram para saber cual era el de mayor aceptación, luego decidimos botones y colores de fondo. 
     #3 Todo fue plasmado en el primer Sprint conforme decidido en la reunión ya con el logo elegido y entregado a tiempo y forma.
-
+3. Agregados.
