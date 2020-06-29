@@ -1,20 +1,19 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 
 
-/*====== Variables ======*/
+/*====== Variables de CSS ======*/
 :root {
-  --grey: grey;
-  --blue: blue;
+  --blue: #005A9D;
   --white: white;
   --gray: #c2baba;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 
-/*====== Basics ======*/
+/*====== ETIQUETAS GENERALES ======*/
 * {
   box-sizing: border-box;
 }
@@ -45,6 +44,10 @@ a {
   color: inherit;
 }
 
+a:hover {
+   text-decoration: none;
+}
+
 figure {
   margin: 0;
   padding: 0;
@@ -68,7 +71,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--grey);
+  background-color: var(--gray);
 }
 
  
@@ -117,14 +120,20 @@ hr {
   color: var(--gray);
 }
 
+
 .product-box {
-  background-color: #ffffff;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: 300ms;
-  margin: 20px 0;
+  display: block;
+  padding: 18px;
+  margin-bottom: 30px;
+  background-color: #FFF;
+  position: relative;
+  -webkit-transition: all .3s ease 0s;
+  -moz-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
 }
 
+ 
 .product-box a {
   display: block;
 }
@@ -142,76 +151,47 @@ hr {
 }
 
 .product-box_data h2 {
-  font-size: 2.4em;
-  font-weight: 300;
-  margin: 0;
+  font-size: 18px;
+  color: #0072D8;
+  height: 27px;
+  line-height: 1.5;
+  margin-top: 9px;
 }
 
 .product-box_data p {
-  font-size: 1.5em;
-  width: 100%;
-  color: var(--gray);
-  margin: 0;
-  height: 0;
-  transition: 300ms;
-  overflow: hidden;
+    font-size: 16px;
+    color: #333;
+    height: 24px;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
-.product-box_data i {
-  color: var(--green);
-  font-size: 1.8em;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  border: solid 1px;
-  border-radius: 50%;
-  position: absolute;
-  top: -15px;
-  right: 15px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 300ms;
-}
-
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: var(--gray);
   padding: 20px 0;
   margin-top: 80px;
 }
 
-.footer-data {
-  text-align: center;
-}
-
-.footer-data i {
-  color: var(--white);
-  font-size: 3.5em;
-}
-
-.footer-data h2 {
-  color: var(--gray);
-  font-size: 2.4em;
-  font-weight: 400;
-}
-
-.footer-data p {
-  color: var(--gray);
-  font-size: 1.5em;
-  font-weight: 300;
+ 
+.title-footer  { 
+  font-size: 13px;
+  line-height: 1.5;
+  padding-bottom: 12px;
 }
 
 .sub-footer {
   border-top: 1px solid var(--light-gray);
-  background-color: #ffffff;
+  background-color: var(--gray);
+
 }
 
 .sub-footer p {
   margin: 0;
-  color: var(--gray);
+  color: black;
   padding: 15px 0;
 }
 

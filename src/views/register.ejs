@@ -6,21 +6,38 @@
 	<!-- Header -->
 	<%- include('partials/headerNavbar') %>
       
-  <div class="container">
-    <h1 class="mb-5">Registracion</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="text" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+  <div class="container products-wrapper">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="products-title">Registracion</h2>
+      </div>
+    </div>
+    <div class="col-12">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="row product-detail">
+
+          <div class="col-12 col-md-6">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="text" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+          </div>
+
+          
+          <div class="col-12 col-md-6">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" value="" name="password" class="form-input" id="exampleInputPassword1">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>  
+          </div>					
+ 
+          
+          <div class="col-12">
+            <button type="submit" class="buy-now-button">Registrarse</button>
+          </div>
+
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" value="" name="password" class="form-control" id="exampleInputPassword1">
-          <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
-        </div>
-        <button type="submit" class="btn btn-primary">Registrase</button>
-    </form>
+      </form>
+    </div>
+
   </div>
 
 	<!-- footer -->
