@@ -1,4 +1,4 @@
-/*====== Fonts ======*/
+/*====== Google Fonts ======*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 
 
@@ -46,6 +46,7 @@ a {
 
 a:hover {
    text-decoration: none;
+   color: white;
 }
 
 figure {
@@ -77,6 +78,7 @@ hr {
  
 
 /*====== Main Navbar ======*/
+/* Hamburguesa */
 .btn-toggle-navbar {
   background-color: var(--blue);
   color: #ffffff;
@@ -113,13 +115,6 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
-.products-title {
-  font-size: 2.4em;
-  font-weight: 400;
-  color: var(--gray);
-}
-
 
 .product-box {
   display: block;
@@ -195,7 +190,7 @@ hr {
   padding: 15px 0;
 }
 
-
+ 
 /*====== Product Detail ======*/
 .product-detail {
   background-color: #ffffff;
@@ -252,25 +247,6 @@ hr {
   margin-bottom: 15px;
 }
 
-.action-button {
-  border: none;
-  font-size: 1.2em;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  margin-top: 15px;
-}
-
-.action-button.edit {
-  background-color: chocolate;
-}
-.action-button.delete {
-  background-color: rgb(248, 69, 37);
-}
-
-
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;
@@ -296,18 +272,11 @@ textarea.form-input {
 }
 
 
-
+/*====== Shopping Card ======*/
+ 
+ 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
-  .main-header_credit-link {
-    margin-top: 0;
-    text-align: right;
-  }
-
-  .banner {
-    height: 320px;
-  }
-
   .btn-toggle-navbar {
     display: none;
   }
@@ -342,9 +311,5 @@ textarea.form-input {
   .main-footer {
     padding: 40px 0;
   }
-
-  .footer-data {
-    width: 95%;
-    margin: auto;
-  }
+ 
 }
