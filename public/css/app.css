@@ -80,13 +80,6 @@ hr {
 
 }
 
- 
-
-/*====== Main Navbar ======*/
- 
-
-
-
 /*====== Products ======*/
 
 .products-wrapper {
@@ -110,6 +103,7 @@ hr {
 
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
+  min-height: 250px;
 }
 
 .product-box_data {
@@ -186,8 +180,8 @@ hr {
   color: var(--gray);
   padding: 15px 0;
 }
-footer.main-footer{}
-footer.container{}
+
+
 footer .contactos{
   padding: 0;
   width: 100%;
@@ -210,12 +204,12 @@ footer .contactos  ul {
 footer .contactos ul li {
   font-size: 13px;
 }
-footer .contactos ul li {}
+
 .redesociales {
   flex: 1;
     display: flex;
     justify-content: flex-end;
-    cursor: pointer;;
+    cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -305,6 +299,7 @@ footer .contactos ul li {}
   justify-content: center;
   padding: 15px;
   border: none;
+  margin-top: 10px;
   margin-bottom: 15px;
 }
 
@@ -335,6 +330,42 @@ textarea.form-input {
 
 /*====== Shopping Card ======*/
  
+ 
+.product-box_image-shopping {
+  height: 80px;
+  max-width: 80px;
+  width: 80px;
+}
+
+.product-box_data-shopping {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-box_data-shopping h2 {
+  font-size: 18px;
+  color: #0072D8;
+  height: 27px;
+  line-height: 1.5;
+  margin-top: 9px;
+}
+
+.product-box_data-shopping p {
+    font-size: 16px;
+    color: #333;
+    height: 24px;
+    line-height: 1.5;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
  
 /*====== Media-Queries ======*/
 
