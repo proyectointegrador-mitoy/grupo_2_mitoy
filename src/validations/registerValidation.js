@@ -6,7 +6,7 @@ usuarios = JSON.parse(usuarios);
 
 module.exports = [
     check('email')
-      .isEmail().withMessage('Esto no esta ni cerca de ser un email, Bro'),
+      .isEmail().withMessage('Mail incorrecto!'),
     body('email')
       .custom(function(value) {
         for(let i = 0; i < usuarios.length; i++) {
@@ -15,7 +15,7 @@ module.exports = [
           }
         }
         return true
-      }).withMessage('Este mail ya está registrado!'),
+      }).withMessage('El mail ya está registrado!'),
     check('password')
-      .isLength({min: 6, max: 16}).withMessage('Dale, poné una contraseña digna')
+      .isLength({min: 6, max: 16}).withMessage('La Passwor debe contener entre 6 y 16 caracteres!')
 ];
