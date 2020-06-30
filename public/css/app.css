@@ -46,7 +46,7 @@ a {
 
 a:hover {
    text-decoration: none;
-   color: white;
+   font-weight: bold;
 }
 
 figure {
@@ -84,35 +84,7 @@ hr {
  
 
 /*====== Main Navbar ======*/
-/* Hamburguesa */
-.btn-toggle-navbar {
-  background-color: var(--blue);
-  color: #ffffff;
-  font-size: 1.5em;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 15px;
-  display: block;
-  margin: 20px auto 0;
-}
-
-.main-navbar {
-  margin-top: 20px;
-  display: none;
-}
-
-.left-navbar,
-.right-navbar {
-  font-size: 1.5em;
-}
-
-.left-navbar a,
-.right-navbar a {
-  display: block;
-  padding: 5px 0;
-  border-bottom: solid 1px var(--gray);
-}
-
+ 
 
 
 
@@ -184,12 +156,10 @@ hr {
 
 .sub-footer {
   border-top: 1px solid var(--light-gray);
-    background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-    background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-    background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-    background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-
-  
+  background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);  
 }
 
 .sub-footer p {
@@ -285,40 +255,111 @@ textarea.form-input {
  
  
 /*====== Media-Queries ======*/
+
 @media (min-width: 768px) {
-  .btn-toggle-navbar {
-    display: none;
-  }
-
-  .main-navbar,
-  .left-navbar,
-  .right-navbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .left-navbar a,
-  .right-navbar a {
-    border-bottom: none;
-  }
-
-  .left-navbar a:hover,
-  .right-navbar a:hover {
-    color: var(--white);
-  }
-
-  .left-navbar li {
-    margin-right: 15px;
-  }
-
-  .right-navbar li {
-    margin-left: 15px;
-  }
-
   .main-footer {
     padding: 40px 0;
   }
  
 }
+
+
+/*------------------------------*/
+ 
+ 
+nav {
+  margin: 20px auto;
+}
+
+#checkbox1,
+.toggle {
+  display: none;
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  align-self: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: background .2s linear;
+}
+
+ 
+/*====== Media-Queries HAMBURGUESA ======*/
+
+
+
+@media screen and (max-width: 600px) {
+  .menu li a {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .toggle {
+    clear: both;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    cursor: pointer;
+    width: 95%;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: all .1s linear;
+    background: -webkit-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -o-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -moz-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+      
+  }
+  .toggle:hover {
+    background: -webkit-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -o-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -moz-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+  }
+  
+  #checkbox1:checked + label .demo li {
+    opacity: 1;
+    visibility: visible;
+    transition: all .7s linear;
+  }
+
+  #checkbox1:checked + label .demo {
+    height: 428px;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 0px;
+    transition: height .3s linear;
+  }
+  .menu li {
+    display: flex;
+    /* magic */
+    align-self: center;
+    width: 95%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .menu li a {
+    width: 95%;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+  }
+}
+ 
