@@ -72,7 +72,13 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--gray);
+ 
+  background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+
+
 }
 
  
@@ -111,6 +117,7 @@ hr {
 
 
 /*====== Products ======*/
+
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -122,10 +129,7 @@ hr {
   margin-bottom: 30px;
   background-color: #FFF;
   position: relative;
-  -webkit-transition: all .3s ease 0s;
-  -moz-transition: all .3s ease 0s;
-  -o-transition: all .3s ease 0s;
-  transition: all .3s ease 0s;
+  width: 100%;
 }
 
  
@@ -180,8 +184,12 @@ hr {
 
 .sub-footer {
   border-top: 1px solid var(--light-gray);
-  background-color: var(--gray);
+    background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+    background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+    background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+    background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
 
+  
 }
 
 .sub-footer p {
@@ -202,6 +210,7 @@ hr {
   width: 70%;
   display: block;
   margin: auto;
+  padding: 20px;
 }
 
 .product-detail-info {

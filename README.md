@@ -3,6 +3,12 @@
 ![](https://raw.githubusercontent.com/proyectointegrador-mitoy/grupo_2_mitoy/master/public/images/logos/logo-180x180.png)
 
 ------------
+# ENLACE AL TABLERO DE TRABAJO
+
+https://trello.com/invite/b/hKtybLLK/0a502901a0ced978f9109caa2fc37d01/proyecto-integrador
+
+------------
+
 **Integrantes**
 - ineslagos89@gmail.com
 - saburo_tsutsumi@yahoo.com.ar
