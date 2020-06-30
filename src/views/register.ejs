@@ -24,13 +24,18 @@
 
           
           <div class="col-12 col-md-6">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <input type="password" value="" name="password" class="form-input" id="exampleInputPassword1">
             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>  
-          </div>					
- 
-          
-          <div class="col-12">
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="exampleInputPassword1" class="form-label">Contraseña-Repetir</label>
+            <input type="repassword" value="" name="repassword" class="form-input" id="exampleInputPassword1">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>  
+          </div>
+
+             <div class="col-12">
             <button type="submit" class="buy-now-button">Registrarse</button>
           </div>
 
