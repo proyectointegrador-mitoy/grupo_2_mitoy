@@ -142,30 +142,104 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: var(--gray);
+  background-color: #ffffff;
   padding: 20px 0;
   margin-top: 80px;
 }
 
- 
-.title-footer  { 
-  font-size: 13px;
-  line-height: 1.5;
-  padding-bottom: 12px;
+.footer-data {
+  text-align: center;
+}
+
+.footer-data i {
+  color: var(--white);
+  font-size: 3.5em;
+}
+
+.footer-data h2 {
+  color: var(--gray);
+  font-size: 2.4em;
+  font-weight: 400;
+}
+
+.footer-data p {
+  color: var(--gray);
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 .sub-footer {
   border-top: 1px solid var(--light-gray);
-  background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-  background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-  background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-  background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);  
+  background-color: #ffffff;
 }
 
 .sub-footer p {
   margin: 0;
-  color: black;
+  color: var(--gray);
   padding: 15px 0;
+}
+footer.main-footer{}
+footer.container{}
+footer .contactos{
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+footer .contactos h3 {
+padding: 0 10px;
+
+}
+footer .contactos  ul {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 40px;
+  margin: 30px;
+
+}
+footer .contactos ul li {
+  font-size: 13px;
+}
+footer .contactos ul li {}
+.redesociales {
+  flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;;
+}
+
+@media (max-width: 767px) {
+  footer .contactos {
+    flex-direction: column;
+  }
+  footer .contactos ul {
+    text-align: center;
+    margin: 20px 0;
+    height: initial;
+  }
+
+}
+
+.icono {
+  width: 30px;
+  height: 30px;
+  margin: 0 3px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.icono:hover {
+  transform: translateY(-5px)
+}
+
+.icono:hover path {
+  fill: red;
+}
+
+.icono path {
+  fill: blue;
+  transition: 0.3s ease;
 }
 
  
