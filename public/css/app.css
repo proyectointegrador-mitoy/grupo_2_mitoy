@@ -1,4 +1,4 @@
-/*====== Google Fonts ======*/
+/*====== LAS FUENTES DE GOOGLE ======*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 
 
@@ -71,13 +71,10 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
- 
   background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
   background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
   background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
   background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
-
-
 }
 
 /*====== Products ======*/
@@ -328,13 +325,28 @@ textarea.form-input {
 }
 
 
-/*====== Shopping Card ======*/
+/*====== Shopping Card o Carrito de compras ======*/
  
- 
+.shopping-titulo {
+  font-size: 16px;
+  border-bottom: 1px solid #2E8F2C;
+  padding: 15px 25px 15px !important;
+}
+
+.product-box-shopping {
+  display: block;
+  margin-bottom: 30px;
+  background-color: #FFF;
+  position: relative;
+  width: 100%;
+}
+
 .product-box_image-shopping {
   height: 80px;
   max-width: 80px;
   width: 80px;
+  padding: 0px 10px;
+  margin: 0px auto;
 }
 
 .product-box_data-shopping {
@@ -359,12 +371,47 @@ textarea.form-input {
     height: 24px;
     line-height: 1.5;
     width: 100%;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+/*========== TOTAL DEL CARRITO DE COMPRAS ============*/
 
+.totales-shopping {
+  padding: 10px;
+}
 
+.radio-shopping {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.radio-label-shopping {
+  padding-left: 10px;
+  font-size: 16px;
+  color: #333;
+  height: 24px;
+  line-height: 1.5;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ 
+.button-shopping {
+  background-color: var(--blue);
+  font-size: 1.6em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: none;
+  margin: auto;
+  margin-top: 30px;
+}
+/*======================*/
 
  
 /*====== Media-Queries ======*/
