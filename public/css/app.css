@@ -232,11 +232,11 @@ footer .contactos ul li {
 }
 
 .icono:hover path {
-  fill:red;
+  fill:var(--blue);
 }
 
 .icono path {
-  fill: blue;
+  fill: var(--light-gray);
   transition: 0.3s ease;
 }
 
