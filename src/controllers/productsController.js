@@ -31,10 +31,12 @@ const controller = {
 	},
 	
 	// Create -  Method to store
-	store: (req, res) => {
+	store:(req, res, next) => {
+		const image = req.files[0] ? req.files[0].filename : null
  		let nuevoProducto = {
 			id : (products.length + 1),
-			...req.body	
+			...req.body,
+			image,	
 		};
 
 		products.push(nuevoProducto);
