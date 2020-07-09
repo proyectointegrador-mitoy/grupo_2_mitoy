@@ -1,0 +1,105 @@
+/*====== Main Header ======*/
+.main-header {
+    background: -webkit-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+    background: -o-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+    background: -moz-linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+    background: linear-gradient(70deg, #fff810  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #63e89e 60%, #ff7ee3 60%);
+  }
+  
+
+  
+/*------------------------------*/
+ 
+ 
+nav {
+  margin: 20px auto;
+}
+
+#checkbox1,
+.toggle {
+  display: none;
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  align-self: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: background .2s linear;
+}
+
+ 
+/*====== Media-Queries HAMBURGUESA ======*/
+@media screen and (max-width: 600px) {
+  .menu li a {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .toggle {
+    clear: both;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    cursor: pointer;
+    width: 95%;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: all .1s linear;
+    background: -webkit-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -o-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -moz-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+      
+  }
+  .toggle:hover {
+    background: -webkit-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -o-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: -moz-linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+    background: linear-gradient(70deg, #63e89e  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #ffab10 60%, #ff7ee3 60%);
+  }
+  
+  #checkbox1:checked + label .demo li {
+    opacity: 1;
+    visibility: visible;
+    transition: all .7s linear;
+  }
+
+  #checkbox1:checked + label .demo {
+    height: 428px;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 0px;
+    transition: height .3s linear;
+  }
+  .menu li {
+    display: flex;
+    /* magic */
+    align-self: center;
+    width: 95%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .menu li a {
+    width: 95%;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+  }
+}

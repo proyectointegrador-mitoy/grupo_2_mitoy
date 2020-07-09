@@ -1,0 +1,10 @@
+/*====== Variables de CSS ======*/
+:root {
+    --blue: #005A9D;
+    --white: white;
+    --gray: #c2baba;
+    --light-gray: #ebebeb;
+    --green: #39b54a;
+    --base-font-family: 'Roboto', 'Montserrat', Arial, Helvetica, sans-serif;
+  }
+  
