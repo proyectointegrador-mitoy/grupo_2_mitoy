@@ -1,71 +1,13 @@
-[{
+[
+  {
     "id": 1,
+    "grupo":"",
     "nombre": "Lindsey",
     "apellido": "Pryer",
     "email": "lpryer0@lulu.com",
-    "Contraseña": "BFdEOrYiBwr",
-    "RepitContraseña": "umcaBAvy"
-  }, {
-    "id": 2,
-    "nombre": "Berkley",
-    "apellido": "Ashment",
-    "email": "bashment1@tinyurl.com",
-    "Contraseña": "AwJJQDT6Ck",
-    "RepitContraseña": "F8szPF"
-  }, {
-    "id": 3,
-    "nombre": "Gabby",
-    "apellido": "Tyre",
-    "email": "gtyre2@facebook.com",
-    "Contraseña": "ar1hLuZ",
-    "RepitContraseña": "thNFoB2Nb"
-  }, {
-    "id": 4,
-    "nombre": "Frederick",
-    "apellido": "Gager",
-    "email": "fgager3@sciencedirect.com",
-    "Contraseña": "PA0Tsrc",
-    "RepitContraseña": "cUq6289"
-  }, {
-    "id": 5,
-    "nombre": "Ericka",
-    "apellido": "Patria",
-    "email": "epatria4@bizjournals.com",
-    "Contraseña": "8vjXmJeJ3Y",
-    "RepitContraseña": "zUoGGiYL"
-  }, {
-    "id": 6,
-    "nombre": "Letti",
-    "apellido": "McVitty",
-    "email": "lmcvitty5@1688.com",
-    "Contraseña": "WewMkA7JAk",
-    "RepitContraseña": "K3QnlCpFZmL"
-  }, {
-    "id": 7,
-    "nombre": "Artemus",
-    "apellido": "Leggat",
-    "email": "aleggat6@dailymotion.com",
-    "Contraseña": "bGXyBRvmIwq",
-    "RepitContraseña": "drd4xzaM7"
-  }, {
-    "id": 8,
-    "nombre": "Cornie",
-    "apellido": "Seally",
-    "email": "cseally7@wix.com",
-    "Contraseña": "zMLKjq8rcrM",
-    "RepitContraseña": "BAaKJKyU"
-  }, {
-    "id": 9,
-    "nombre": "Reuben",
-    "apellido": "Dumbell",
-    "email": "rdumbell8@sakura.ne.jp",
-    "Contraseña": "nL0YL7",
-    "RepitContraseña": "jNLr2I"
-  }, {
-    "id": 10,
-    "nombre": "Alyssa",
-    "apellido": "Vassbender",
-    "email": "avassbender9@cnn.com",
-    "Contraseña": "ZQ1ooxmuawa",
-    "RepitContraseña": "XzaZpNWP"
-  }]
+    "telefono":"",
+    "genero":"",
+    "estado":"",
+    "Contraseña": "BFdEOrYiBwr"
+  }
+]

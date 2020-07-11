@@ -32,7 +32,8 @@
   a:hover {
      text-decoration: none;
      font-weight: bold;
-  }
+     color: inherit;
+    }
   
   figure {
     margin: 0;

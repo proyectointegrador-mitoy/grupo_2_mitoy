@@ -20,20 +20,20 @@ let storage = multer.diskStorage({
 
 let upload = multer({ storage })
 
-router.get('/', productsController.root); /* GET - All products */
-router.get('/detail/:productId/', productsController.detail); /* GET - Product detail */
+router.get('/', productsController.root); /* GET - Todos los productos */
+router.get('/detail/:productId/', productsController.detail); /* GET - Detalle de un producto particular*/
 
+router.get('/create/', productsController.create); /* GET - Formulario de creación de productos*/
+router.post('/create/', upload.any(), productsController.store); /* POST - Acción de creación (a donde se envía el formulario)*/
 
-router.get('/create/', productsController.create); /* GET - Form to create */
-router.post('/create/', upload.any(), productsController.store); /* POST - Store in DB */
+router.get('/edit/:productId', productsController.edit); /* GET - Formulario de edición de productos */
+router.put('/edit/:productId', productsController.update); /* PUT - Acción de edición (a donde se envía el formulario):*/
+
+router.delete('/delete/:productId', productsController.destroy); /* DELETE - Acción de borrado*/
+
 
 router.get('/shopping/', productsController.shopping); /* GET - Form to create */
 
 
-router.get('/edit/:productId', productsController.edit); /* GET - Form to create */
-router.put('/edit/:productId', productsController.update); /* PUT - Update in DB */
-
-
-router.delete('/delete/:productId', productsController.destroy); /* DELETE - Delete from DB */
 
 module.exports = router;

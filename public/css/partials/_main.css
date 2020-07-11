@@ -1,3 +1,19 @@
+
+/*====== ABM Products ======*/
+.list-product-box_image  {
+  height: 80px;
+  max-width: 80px;
+  width: 80px;
+  padding: 0px 10px;
+  margin: 0px auto;
+}
+
+
+
+
+/*====== Products ======*/
+
+
 /*====== Products ======*/
 
 .products-wrapper {

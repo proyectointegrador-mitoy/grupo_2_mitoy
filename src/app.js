@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
 // ************ Route System require and use() ************
 var mainRouter = require('./routes/main');
@@ -19,6 +20,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETEno
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 
 // ************ WRITE YOUR CODE FROM HERE ************

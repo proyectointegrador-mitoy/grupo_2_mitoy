@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Formulario de creación'}) %>
+<body>
+    <!-- Header -->
+    <%- include('partials/headerNavbar') %>
+    <!-- /Header -->
+ 
+
+    <div class="container products-wrapper">
+        <div class="row">
+
+            <div class="col-4">
+                <a href="/products/create" class="buy-now-button">Cargar un Producto</a>
+            </div>
+
+            <div class="col-12">
+                <h3>Productos</h3>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row product-detail">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Descuento</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>              
+                    <% for (let i = 0 ; i < products.length ; i ++ ) {%>
+                    <tr>
+                        <th scope="row"><%= products[i].id %></th>
+                        <td class="list-product-box_image">
+                            <img src="/images/products/<%= (products[i].image != undefined) ? products[i].image : "default-image.png" %>" alt="imagen de producto"> 
+                        </td>                        
+                        <td><%= products[i].id %></td>
+                        <td><%= products[i].name %></td>
+                        <td><%= products[i].category %></td>
+                        <td><%= products[i].material %></td>
+                        <td><%= products[i].stock %></td>
+                        <td><%= products[i].discount %></td>
+                        <td><%= products[i].price %></td>
+                        <td>
+                            <a href="/products/edit/<%= products[i].id %>"><i class="fas fa-edit fa-4x"></i>
+                            </a>                            
+                        </td> 
+                        <td>
+                            <form action="/products/delete/<%= products[i].id %>?_method=delete" method="POST" style="display: inline-flex">
+                                <button type="submit" ><i class="fas fa-trash-alt fa-4x"></i></button>
+                                </a>                                  
+                            </form>
+                        </td>                        
+                    </tr>  
+                    <%}%>
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+
+    </div>
+
+
+ 
+
+
+              
+ 
+
+        
+
+ 
+    <!-- footer -->
+    <%- include('partials/footer') %>
+    <!-- /footer -->
+</body>	
+</html>
