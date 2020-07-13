@@ -1,13 +1,1 @@
-[
-  {
-    "id": 1,
-    "grupo":"",
-    "nombre": "Lindsey",
-    "apellido": "Pryer",
-    "email": "lpryer0@lulu.com",
-    "telefono":"",
-    "genero":"",
-    "estado":"",
-    "Contraseña": "BFdEOrYiBwr"
-  }
-]
+[{"email":"registrotu3d@gmail.com","password":"$2b$10$aaDvkzw0tpTx1XKwBG5in.IJC3frm.n42RdypgZ7krTw0wdqOUA6."},{"email":"admin@admin.com","password":"$2b$10$hTaPcRkpDe99jqAKFB0MDuY.qOJ.yIH0cewqyyZoqxxG6wbAGGVzu"},{"email":"german.settino@gmail.com","password":"$2b$10$XTkWV9FG4A.JnZkiIYLDcOsdYTuRk7PAeMimJ/a1umHaUXV1P6uAa"},{"email":"javaj_lpl@hotmail.com","password":"$2b$10$9PFpzFGjPuYuWlZLQYX2Me.mohz6GmPS.xN8YZd7upbM/O8cJ/4d2"}]

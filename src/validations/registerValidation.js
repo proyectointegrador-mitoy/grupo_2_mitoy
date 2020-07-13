@@ -9,6 +9,7 @@ module.exports = [
       .isEmail().withMessage('Mail incorrecto!'),
     body('email')
       .custom(function(value) {
+        console.log(value);
         for(let i = 0; i < usuarios.length; i++) {
           if(usuarios[i].email == value) {
             return false;
@@ -17,5 +18,7 @@ module.exports = [
         return true
       }).withMessage('El mail ya está registrado!'),
     check('password')
-      .isLength({min: 6, max: 16}).withMessage('La Passwor debe contener entre 6 y 16 caracteres!')
+      .isLength({min: 4, max: 8}).withMessage('La Contrasena debe contener entre 4 y 8 caracteres!'),
+    check('repassword')
+      .isLength({min: 4, max: 8}).withMessage('La Contrasena debe contener entre 4 y 8 caracteres!')
 ];

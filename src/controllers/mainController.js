@@ -4,8 +4,6 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 const controller = {
  	root: (req, res) => {
 		let elementoBuscado = req.query.keywords;
@@ -19,7 +17,12 @@ const controller = {
 		});	
 		
 		res.render('index', { products : products });
+	},
+
+	politics: (req, res) => {
+		res.render('politics');
 	}
+
 };
 
 module.exports = controller;

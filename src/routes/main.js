@@ -7,4 +7,7 @@ const mainController = require('../controllers/mainController');
 
 router.get('/', mainController.root); /* GET - home page */
 
+router.get('/politics', mainController.politics); /* GET - home page */
+
+
 module.exports = router;
