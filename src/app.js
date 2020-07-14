@@ -1,16 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const authCookieMiddleware = require('./middlewares/authCookieMiddleware')
 
 // ************ Route System require and use() ************
-var mainRouter = require('./routes/main');
-var usersRouter = require('./routes/users');
-var productsRouter = require('./routes/products');
+const mainRouter = require('./routes/main');
+const usersRouter = require('./routes/users');
+const productsRouter = require('./routes/products');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -19,17 +21,21 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
+app.use(session({secret: 'asdasd'}));
+
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETEno
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
+
 
 // ************ WRITE YOUR CODE FROM HERE ************
 app.use('/', mainRouter); // Ru
 app.use('/users', usersRouter);// Rutas /users
 app.use('/products', productsRouter);// Rutas /products
 
-
-
+ 
+app.use(authCookieMiddleware);
 
 // ************ catch 404 and forward to error handler ************
 // catch 404 and forward to error handler

@@ -1,95 +1,101 @@
-	<!DOCTYPE html>
-	<html lang="es">
-	<!-- Include Head -->
-	<%- include('partials/head', {title: 'Formulario de creación'}) %>
-	<body>
-		<!-- Header -->
-		<%- include('partials/headerNavbar') %>
-		<!-- /Header -->
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Formulario de creación'}) %>
 
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h3>Carga de Productos</h3>
-				</div>
-			</div>
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+
+	<div class="container products-wrapper">
+
+		<%- include('partials/breadCrumbs') %>
+
+		<div class="row">
 			<div class="col-12">
-				<form action="" method="POST" enctype="multipart/form-data">
-					<div class="row product-detail">
-						<div class="col-12 col-md-6">
-							<label for="name" class="form-label">Nombre: *</label>
-							<input type="text" id="name" name="name" placeholder="Ej: juguete 1" class="form-input" required>
-						</div>
-
-						<div class="col-12 col-md-6">
-							<label for="material" class="form-label">Material: *</label>
-							<select name="material" id="material" class="form-input">
-								<option value="">Elegí un material</option>
-								<option value="madera">Madera</option>
-								<option value="Carton">Carton</option>
-								<option value="plastico">Plastico</option>
-								<option value="plastico">Otros</option>
-							</select>
-						</div>		
-
-						<div class="col-12 col-md-6">
-							<label for="price" class="form-label">Precio: *</label>
-							<input type="text" id="price" name="price" placeholder="Ej: 999" class="form-input" required>
-						</div>
-
-						<div class="col-12 col-md-6">
-							<label for="color" class="form-label">Color:</label>
-							<select name="color" id="color" class="form-input">
-								<option value="">Elegí color</option>
-								<option value="">Violeta</option>
-								<option value="">Naranja</option>
-								<option value="">Rojo</option>
-								<option value="">Verde</option>
-							</select>	
-						</div>		
-
-
-						<div class="col-12 col-md-6">
-							<label for="discount" class="form-label">Descuento:</label>
-							<input type="text" id="discount" name="discount" placeholder="Ej: 10" class="form-input">
-						</div>						
-						<div class="col-12 col-md-6">
-							<label for="stock" class="form-label">Cantidad: *</label>
-							<input type="number" id="stock" name="stock" class="form-input" required>
-						</div>						
-						<div class="col-12 col-md-6">
-							<label for="category" class="form-label">Categoría:</label>
-							<select name="category" id="category" class="form-input">
-								<option value="">Elegí</option>
-								<option value="in-sale">En oferta</option>
-								<option value="visited">Últimos agregados</option>
-							</select>
-						</div>
-						<div class="col-12 col-md-6">
-							<label for="age" class="form-label">Edad: *</label>
-							<input type="number" id="age" name="age" class="form-input" required>
-						</div>					
-						<div class="col-12">
-							<label for="imagenControl" class="form-label">Imagen</label>
-							<input type="file" id="imagenControl" name="imagen" >
-						  </div>							
-						<div class="col-12">
-							<label for="description" class="form-label">Descipción: *</label>
-							<textarea name="description" id="description" class="form-input" required></textarea>
-						</div>
-						
-						<div class="col-12">
-							<button type="submit" class="buy-now-button">Guardar</button>
-						</div>
-					</div>
-				</form>
+				<h3>Carga de Productos</h3>
 			</div>
-
 		</div>
-		<!-- /todos los productos -->
+		<div class="col-12">
+			<form action="" method="POST" enctype="multipart/form-data">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<label for="name" class="form-label">Nombre: *</label>
+						<input type="text" id="name" name="name" placeholder="Ej: juguete 1" class="form-input"
+							required>
+					</div>
 
-		<!-- footer -->
-		<%- include('partials/footer') %>
-		<!-- /footer -->
-	</body>	
-	</html>
+					<div class="col-12 col-md-6">
+						<label for="material" class="form-label">Material: *</label>
+						<select name="material" id="material" class="form-input">
+							<option value="">Elegí un material</option>
+							<option value="madera">Madera</option>
+							<option value="Carton">Carton</option>
+							<option value="plastico">Plastico</option>
+							<option value="plastico">Otros</option>
+						</select>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label for="price" class="form-label">Precio: *</label>
+						<input type="text" id="price" name="price" placeholder="Ej: 999" class="form-input" required>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label for="color" class="form-label">Color:</label>
+						<select name="color" id="color" class="form-input">
+							<option value="">Elegí color</option>
+							<option value="">Violeta</option>
+							<option value="">Naranja</option>
+							<option value="">Rojo</option>
+							<option value="">Verde</option>
+						</select>
+					</div>
+
+
+					<div class="col-12 col-md-6">
+						<label for="discount" class="form-label">Descuento:</label>
+						<input type="text" id="discount" name="discount" placeholder="Ej: 10" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="stock" class="form-label">Cantidad: *</label>
+						<input type="number" id="stock" name="stock" class="form-input" required>
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							<option value="">Elegí</option>
+							<option value="in-sale">En oferta</option>
+							<option value="visited">Últimos agregados</option>
+						</select>
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="age" class="form-label">Edad: *</label>
+						<input type="number" id="age" name="age" class="form-input" required>
+					</div>
+					<div class="col-12">
+						<label for="imagenControl" class="form-label">Imagen</label>
+						<input type="file" id="imagenControl" name="imagen">
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label">Descipción: *</label>
+						<textarea name="description" id="description" class="form-input" required></textarea>
+					</div>
+
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Guardar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>
+
+</html>

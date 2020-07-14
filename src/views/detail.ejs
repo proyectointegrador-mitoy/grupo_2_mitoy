@@ -9,12 +9,16 @@
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
+
+		<%- include('partials/breadCrumbs') %>
+
 		<div class="row">
 			<div class="col-12">
 				<h3><%= elProducto.name %></h3>
 			</div>
 		</div>
 		<div class="product-detail">
+
 			<div class="row">
 				<div class="col-12 col-lg-8">
 					<img src="/images/products/<%= (elProducto.image != undefined) ? elProducto.image : "default-image.png" %>" alt="product image" class="product-detail-img">

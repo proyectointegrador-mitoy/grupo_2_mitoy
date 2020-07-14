@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 
 const productsController = require('../controllers/productsController');
+const breadcrumbs = require('../middlewares/breadCrumbsMiddleware');
 
 
 let storage = multer.diskStorage({
@@ -20,19 +21,18 @@ let storage = multer.diskStorage({
 
 let upload = multer({ storage })
 
-router.get('/', productsController.root); /* GET - Todos los productos */
-router.get('/detail/:productId/', productsController.detail); /* GET - Detalle de un producto particular*/
+router.get('/', breadcrumbs.breadCrumbsMiddleware(), productsController.root); /* GET - Todos los productos */
+router.get('/detail/:productId/', breadcrumbs.breadCrumbsMiddleware(), productsController.detail); /* GET - Detalle de un producto particular*/
 
-router.get('/create/', productsController.create); /* GET - Formulario de creación de productos*/
+router.get('/create/', breadcrumbs.breadCrumbsMiddleware(), productsController.create); /* GET - Formulario de creación de productos*/
 router.post('/create/', upload.any(), productsController.store); /* POST - Acción de creación (a donde se envía el formulario)*/
 
-router.get('/edit/:productId', productsController.edit); /* GET - Formulario de edición de productos */
+router.get('/edit/:productId', breadcrumbs.breadCrumbsMiddleware(), productsController.edit); /* GET - Formulario de edición de productos */
 router.put('/edit/:productId', productsController.update); /* PUT - Acción de edición (a donde se envía el formulario):*/
 
 router.delete('/delete/:productId', productsController.destroy); /* DELETE - Acción de borrado*/
 
-
-router.get('/shopping/', productsController.shopping); /* GET - Form to create */
+router.get('/shopping/', breadcrumbs.breadCrumbsMiddleware(), productsController.shopping); /* GET - Form to create */
 
 
 

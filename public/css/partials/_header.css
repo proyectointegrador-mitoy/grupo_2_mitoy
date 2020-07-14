@@ -24,10 +24,13 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
+  font-size: 15px;
 }
 
-
+nav a {
+ 
+  font-size: 15px;
+}
 
 .main-header-inicio {
   font-size: 1.5em;

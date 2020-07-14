@@ -10,7 +10,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	root: (req, res) => {
-		res.render('products', { products : products });
+		res.render('products', {products : products , breadcrumbs: req.breadcrumbs } );
 	},
 
 	// Detail - Detail from one product
@@ -18,16 +18,14 @@ const controller = {
         let productId = req.params.productId;
         products.forEach(function(elemento) {
             if(elemento.id == productId) {
-           	     res.render('detail', {
-                    elProducto: elemento
-                });
+           	     res.render('detail', {breadcrumbs: req.breadcrumbs, elProducto: elemento});
 		    }
         });		
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('product-create-form');
+		res.render('product-create-form', {breadcrumbs: req.breadcrumbs});
 	},
 	
 	// Create -  Method to store
@@ -50,9 +48,7 @@ const controller = {
         let productId = req.params.productId;
         products.forEach(function(elemento) {
             if(elemento.id == productId) {
-           	     res.render('product-edit-form', {
-                    elProducto: elemento
-                });
+           	     res.render('product-edit-form', {breadcrumbs: req.breadcrumbs, elProducto: elemento});
 		    }
         });	
 	},
@@ -86,7 +82,7 @@ const controller = {
 	},
 
 	shopping: (req, res) => {
-		res.render('shopping');
+		res.render('shopping', {breadcrumbs: req.breadcrumbs});
 	}
 };
 

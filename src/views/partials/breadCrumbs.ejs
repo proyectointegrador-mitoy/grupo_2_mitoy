@@ -1,0 +1,21 @@
+<% if(breadcrumbs){ %>
+<nav>
+    <ol class="breadcrumb">
+        <% for(var i=0; i<breadcrumbs.length; i++){ %>
+        <% if(i == (breadcrumbs.length - 1)){ %>
+        <li class="breadcrumb-item" aria-current="page"><%= breadcrumbs[i].name %></li>
+        <%} else {%>
+        <li class="breadcrumb-item">
+            <a href="<%= breadcrumbs[i].url %>">
+                <% if ( i == 0 ) {%>
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <%} else {%>
+                <%= breadcrumbs[i].name %>
+                <% } %>
+            </a>
+        </li>
+        <% } %>
+        <% } %>
+    </ol>
+</nav>
+<% } %>

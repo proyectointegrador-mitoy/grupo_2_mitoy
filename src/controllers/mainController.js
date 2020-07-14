@@ -20,7 +20,7 @@ const controller = {
 	},
 
 	politics: (req, res) => {
-		res.render('politics');
+		res.render('politics', {breadcrumbs: req.breadcrumbs});
 	}
 
 };
