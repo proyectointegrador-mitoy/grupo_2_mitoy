@@ -132,6 +132,9 @@
   font-size: 1.6em;
   margin: 10px 0;
 }
+.form-check-input {
+  margin-left: 5px;
+}
 
 .form-input {
   display: block;
