@@ -18,9 +18,11 @@ const controller = {
 		
 		res.render('index', { products : products });
 	},
-
 	politics: (req, res) => {
 		res.render('politics', {breadcrumbs: req.breadcrumbs});
+	},
+	sucursales: (req, res) => {
+		res.render('sucursales', {breadcrumbs: req.breadcrumbs});
 	}
 
 };

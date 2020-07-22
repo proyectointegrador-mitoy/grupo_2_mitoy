@@ -112,5 +112,31 @@
         "age": "2",
         "description": "Bloques que arman una casa, totalmente en madera, apto para bebés y niños hasta los 3 años.",
         "image": "imagen-1594411908884.jpeg"
+    },
+    {
+        "id": 11,
+        "name": "Prueba Juguete 100",
+        "material": "madera",
+        "price": "2000",
+        "color": "",
+        "discount": "20",
+        "stock": "10",
+        "category": "visited",
+        "age": "3",
+        "description": "Muy novedoso, ññññññññññññññññññññ  ",
+        "image": "imagen-1595458360323.png"
+    },
+    {
+        "id": 12,
+        "name": "Prueba Juguete 101",
+        "material": "madera",
+        "price": "500",
+        "color": "",
+        "discount": "10",
+        "stock": "30",
+        "category": "visited",
+        "age": "7",
+        "description": "Juguete de nuestra epocas!!!!11",
+        "image": "imagen-1595458611791.jpg"
     }
 ]
