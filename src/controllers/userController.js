@@ -3,8 +3,11 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const {check, validationResult, body} = require('express-validator');
 
-let usuarios = fs.readFileSync(path.join(__dirname, '../data/usuarios.json'), 'utf8');
+usuarios = fs.readFileSync(path.join(__dirname, '../data/usuarios.json'), 'utf8');
+detallesUsuarios = fs.readFileSync(path.join(__dirname, '../data/detallesUsuarios.json'), 'utf8');
+
 usuarios = JSON.parse(usuarios);
+detallesUsuarios = JSON.parse(detallesUsuarios);
 
 module.exports = {
     register: function(req, res) {
@@ -46,9 +49,7 @@ module.exports = {
                     req.session.emailUsuario = usuarios[i].email;
 
                     if (req.body.remember != undefined ){
-
                         res.cookie('authRemember', usuarios[i].email, { maxAge: 60000 * 8 });
-
                     }
 
                     return res.redirect('/')
@@ -77,5 +78,46 @@ module.exports = {
         req.session.destroy();
         res.cookie('authRemember', '', { maxAge: 60000 * 0 });
         res.redirect('/login');
+    },
+
+    editLogin: function (req, res){
+        res.render ('edit-login')
+    },
+
+    verifyedit: function (req, res){
+
+            console.log('llegamos hasta aca');
+
+            for(let i = 0; i < usuarios.length; i++) {
+                if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
+                    req.session.emailUsuario = usuarios[i].email;
+                
+                    console.log ('usuario encontrado');
+                    return res.redirect ('edit');
+                }
+            }
+            return res.redirect ('register');           
+    },
+
+    accessEditUser: function (req, res){
+        res.render ('edit');
+    },
+
+    editUser: function (req, res){
+        let nuevoDetalleUsuario = {
+            email: req.body.email,
+            nombreUsuario: req.body.nombreUsuario,
+            fechaNacimiento: req.body.fechaNacimiento,
+            sexo: req.body.sexo,
+            nosConociste: req.body.nosConociste}
+            
+        detallesUsuarios.push(nuevoDetalleUsuario);
+        fs.writeFileSync(path.join(__dirname, '../data/detallesUsuarios.json'), JSON.stringify(detallesUsuarios));
+
+        return res.redirect('editsuccess');
+    },
+
+    editsuccess: function (req, res){
+        res.render ('edit-success');
     }
 }
