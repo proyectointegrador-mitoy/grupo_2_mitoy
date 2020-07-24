@@ -1,1 +1,146 @@
+<<<<<<< HEAD
 [{"id":2,"name":"Juego bloques con tizas","material":"","price":"800","color":"","discount":"0","stock":"15","category":"in-sale","age":"10","image":"imagen2.jpg","description":"Juegos de bloques con tizas para dibujar lo que quieras."},{"id":3,"name":"Muñecas Personalizadas","description":"Muñecas con caracteristicas intercambibles variadas.","price":1200,"discount":0,"image":"imagen3.jpg","category":"in-sale"},{"id":4,"name":"Cajas para armar con formas","description":"Muñecos para armar de carton version princesa, robot y Frida.","price":300,"discount":0,"image":"imagen4.jpg","category":"in-sale"},{"id":5,"name":"Peluches lavables","description":"Variage de peluche a eleccion de color (oso, poni y pelota).","price":800,"discount":0,"image":"imagen5.jpg","category":"in-sale"},{"id":6,"name":"Libro magico amarillo","description":"Libros de cuentos personalizados con el nombre del homenageado","price":250,"discount":0,"image":"imagen6.jpg","category":"in-sale"},{"id":51,"name":"Bloques de armar de madera","material":"madera","price":"500","color":"","discount":"10","stock":"10","category":"in-sale","age":"3","description":"Bloques de madera de armar apto para bebés hasta los 3 años. ","image":"imagen-1594411479480.jpeg"},{"id":52,"name":"Juego de Ajedrez ","material":"","price":"1200","color":"","discount":"10","stock":"20","category":"visited","age":"8","description":"Juego de ajedrez de madera de pino color oscuro y claro, con caja para guardar. ","image":"imagen-1594411635236.jpeg"},{"id":53,"name":"Auto ecológico","material":"madera","price":"1500","color":"","discount":"10","stock":"30","category":"visited","age":"4","description":"Auto apto para niños de 3 a 7 años, totalmente de madera reciclada, ecológico. ","image":"imagen-1594411773613.jpeg"},{"id":54,"name":"Casa de madera en bloques","material":"madera","price":"200","color":"","discount":"10","stock":"100","category":"in-sale","age":"2","description":"Bloques que arman una casa, totalmente en madera, apto para bebés y niños hasta los 3 años.","image":"imagen-1594411908884.jpeg"}]
+=======
+[
+    {
+        "id": 1,
+        "name": "Eco bloques",
+        "material": "",
+        "price": "500",
+        "color": "",
+        "discount": "0",
+        "stock": "10",
+        "category": "in-sale",
+        "age": "10",
+        "image": "imagen2.jpg",
+        "description": "Los Eco Bloques son piezas de madera (obtenidos a partir de procesos de poda), cortados con precisión para facilitar el apilado en diversos niveles y con formas irregulares naturales."
+    },
+    {
+        "id": 2,
+        "name": "Juego bloques con tizas",
+        "material": "",
+        "price": "800",
+        "color": "",
+        "discount": "0",
+        "stock": "15",
+        "category": "in-sale",
+        "age": "10",
+        "image": "imagen2.jpg",
+        "description": "Juegos de bloques con tizas para dibujar lo que quieras."
+    },
+    {
+        "id": 3,
+        "name": "Muñecas Personalizadas",
+        "description": "Muñecas con caracteristicas intercambibles variadas.",
+        "price": 1200,
+        "discount": 0,
+        "image": "imagen3.jpg",
+        "category": "in-sale"
+    },
+    {
+        "id": 4,
+        "name": "Cajas para armar con formas",
+        "description": "Muñecos para armar de carton version princesa, robot y Frida.",
+        "price": 300,
+        "discount": 0,
+        "image": "imagen4.jpg",
+        "category": "in-sale"
+    },
+    {
+        "id": 5,
+        "name": "Peluches lavables",
+        "description": "Variage de peluche a eleccion de color (oso, poni y pelota).",
+        "price": 800,
+        "discount": 0,
+        "image": "imagen5.jpg",
+        "category": "in-sale"
+    },
+    {
+        "id": 6,
+        "name": "Libro magico amarillo",
+        "description": "Libros de cuentos personalizados con el nombre del homenageado",
+        "price": 250,
+        "discount": 0,
+        "image": "imagen6.jpg",
+        "category": "in-sale"
+    },
+    {
+        "id": 51,
+        "name": "Bloques de armar de madera",
+        "material": "madera",
+        "price": "500",
+        "color": "",
+        "discount": "10",
+        "stock": "10",
+        "category": "in-sale",
+        "age": "3",
+        "description": "Bloques de madera de armar apto para bebés hasta los 3 años. ",
+        "image": "imagen-1594411479480.jpeg"
+    },
+    {
+        "id": 52,
+        "name": "Juego de Ajedrez ",
+        "material": "",
+        "price": "1200",
+        "color": "",
+        "discount": "10",
+        "stock": "20",
+        "category": "visited",
+        "age": "8",
+        "description": "Juego de ajedrez de madera de pino color oscuro y claro, con caja para guardar. ",
+        "image": "imagen-1594411635236.jpeg"
+    },
+    {
+        "id": 53,
+        "name": "Auto ecológico",
+        "material": "madera",
+        "price": "1500",
+        "color": "",
+        "discount": "10",
+        "stock": "30",
+        "category": "visited",
+        "age": "4",
+        "description": "Auto apto para niños de 3 a 7 años, totalmente de madera reciclada, ecológico. ",
+        "image": "imagen-1594411773613.jpeg"
+    },
+    {
+        "id": 54,
+        "name": "Casa de madera en bloques",
+        "material": "madera",
+        "price": "200",
+        "color": "",
+        "discount": "10",
+        "stock": "100",
+        "category": "in-sale",
+        "age": "2",
+        "description": "Bloques que arman una casa, totalmente en madera, apto para bebés y niños hasta los 3 años.",
+        "image": "imagen-1594411908884.jpeg"
+    },
+    {
+        "id": 11,
+        "name": "Prueba Juguete 100",
+        "material": "madera",
+        "price": "2000",
+        "color": "",
+        "discount": "20",
+        "stock": "10",
+        "category": "visited",
+        "age": "3",
+        "description": "Muy novedoso, ññññññññññññññññññññ  ",
+        "image": "imagen-1595458360323.png"
+    },
+    {
+        "id": 12,
+        "name": "Prueba Juguete 101",
+        "material": "madera",
+        "price": "500",
+        "color": "",
+        "discount": "10",
+        "stock": "30",
+        "category": "visited",
+        "age": "7",
+        "description": "Juguete de nuestra epocas!!!!11",
+        "image": "imagen-1595458611791.jpg"
+    }
+]
+>>>>>>> 60da02f947dc969567fee266e9cf94d58055bc26

@@ -11,6 +11,8 @@ router.get('/', mainController.root); /* GET - home page */
 
 router.get('/politics', breadcrumbs.breadCrumbsMiddleware(), mainController.politics );
 
+router.get('/sucursales', breadcrumbs.breadCrumbsMiddleware(), mainController.sucursales );
+
 
 
 module.exports = router;

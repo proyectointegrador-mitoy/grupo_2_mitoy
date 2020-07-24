@@ -16,6 +16,7 @@
 	Durante el trabajo lo mas dificil es saber dividir las tareas ya que cada cosa dependia de la otra y que todo el codigo funcionara conforme lo idealizamos.
     #Sprint 2 nuevamente fue difícil dividir las tareas y coordinar los tiempos.
     #Sprint 3 el menu hamburguesa se nos complico dejamos lo mejor que pudimos y no nos quedó bien en una parte aunque probamos varios numeros. 
+    #Sprint 4 Cuando se implementó el registro de usuarios y el formulario para registración rápida se complicó para subir a git hub, pero en equipo se pudo encontrar el error. 
 
 2. Fortalezas 
 
@@ -24,4 +25,4 @@
     #3 Todo fue plasmado en el primer Sprint conforme decidido en la reunión ya con el logo elegido y entregado a tiempo y forma.
     #4 El segundo sprint fue entregado a tiempo y pudimos cada uno hacer un poco aunque sobre la hora.
     #5 El tercer sprint nos juntamos y leimos las consignas y pudimos dividir de mejor forma entre todos y concretar los principales objetivos a tiempo. Cargamos más productos, adicionamos el repositorio, mas imagenes de productos y para poder cargarlos con facilidad.
-
+    #6 El cuarto sprint ya fue más facil de coordinar y pudimos repartir las tareas y los tiempos.
