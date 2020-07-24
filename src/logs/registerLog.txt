@@ -8,13 +8,7 @@ Nuevo usuario:
 Nuevo usuario: registrotu3d@gmail.com
 Nuevo usuario: settinoslack
 Nuevo usuario: pepe@pepe.com
-<<<<<<< HEAD
 Nuevo usuario: 
-=======
-Nuevo usuario: saburo_tsutsumi@yahoo.com.ar
-Nuevo usuario: lagos@prueba.com
-Nuevo usuario: lagos2@mitoy.com.ar
-Nuevo usuario: lagos2@mitoy.com.ar
-Nuevo usuario: lagos2@mitoy.com.ar
-Nuevo usuario: lakes@mitoy.com.ar
->>>>>>> 60da02f947dc969567fee266e9cf94d58055bc26
+Nuevo usuario: german.settino@gmail.com
+Nuevo usuario: pepe
+Nuevo usuario: german.settino@gmail.com
