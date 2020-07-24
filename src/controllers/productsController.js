@@ -5,6 +5,8 @@ const { response } = require('../app');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const {check, validationResult, body} = require('express-validator');
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
@@ -30,17 +32,31 @@ const controller = {
 	
 	// Create -  Method to store
 	store:(req, res, next) => {
-		const image = req.files[0] ? req.files[0].filename : null
- 		let nuevoProducto = {
-			id : (products.length + 1),
-			...req.body,
-			image,	
-		};
 
-		products.push(nuevoProducto);
-		let listaActualizada = JSON.stringify(products);
-		fs.writeFileSync(path.join(__dirname, '../data/products.json'),listaActualizada);
-		res.redirect('/products/detail/' + nuevoProducto.id);
+		let errors = validationResult(req);
+
+		if (errors.isEmpty()) {
+
+			const image = req.files[0] ? req.files[0].filename : null
+			let nuevoProducto = {
+				id : (products.length + 1),
+				...req.body,
+				image,	
+			};
+
+			products.push(nuevoProducto);
+			let listaActualizada = JSON.stringify(products);
+			fs.writeFileSync(path.join(__dirname, '../data/products.json'),listaActualizada);
+			res.redirect('/products/detail/' + nuevoProducto.id);
+
+		} else {
+
+            res.render('product-create-form', {	
+				breadcrumbs: req.breadcrumbs, 
+				errors: errors.mapped(),
+                old: req.body
+            })
+        }
 	},
 
 	// Update - Form to edit

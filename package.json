@@ -8,6 +8,8 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
+    "datatables.net": "^1.10.21",
+    "datatables.net-dt": "^1.10.21",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
