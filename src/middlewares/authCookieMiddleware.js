@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-let usuarios = fs.readFileSync(path.join(__dirname,'../data/usuarios.json'),'utf8');
+let usuarios = fs.readFileSync(path.join(__dirname,'../database/usuarios.json'),'utf8');
 usuarios = JSON.parse(usuarios);
 
 function authCookieMiddleware(req,res,next) {

@@ -3,8 +3,12 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const {check, validationResult, body} = require('express-validator');
 
-usuarios = fs.readFileSync(path.join(__dirname, '../data/usuarios.json'), 'utf8');
-detallesUsuarios = fs.readFileSync(path.join(__dirname, '../data/detallesUsuarios.json'), 'utf8');
+
+const db = require('../database/models');
+
+
+usuarios = fs.readFileSync(path.join(__dirname, '../database/usuarios.json'), 'utf8');
+detallesUsuarios = fs.readFileSync(path.join(__dirname, '../database/detallesUsuarios.json'), 'utf8');
 
 usuarios = JSON.parse(usuarios);
 detallesUsuarios = JSON.parse(detallesUsuarios);
@@ -23,7 +27,7 @@ module.exports = {
                 password: bcrypt.hashSync(req.body.password, 10)
             };
             usuarios.push(nuevoUsuario);
-            fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios));
+            fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios));
             return res.redirect('register');//UNA VEZ REGISTRADO
         } else {
             res.render('register', {
@@ -112,7 +116,7 @@ module.exports = {
             nosConociste: req.body.nosConociste}
             
         detallesUsuarios.push(nuevoDetalleUsuario);
-        fs.writeFileSync(path.join(__dirname, '../data/detallesUsuarios.json'), JSON.stringify(detallesUsuarios));
+        fs.writeFileSync(path.join(__dirname, '../database/detallesUsuarios.json'), JSON.stringify(detallesUsuarios));
 
         return res.redirect('editsuccess');
     },

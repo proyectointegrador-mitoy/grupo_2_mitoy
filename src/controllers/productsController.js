@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { response } = require('../app');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.join(__dirname, '../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const {check, validationResult, body} = require('express-validator');
@@ -46,7 +46,7 @@ const controller = {
 
 			products.push(nuevoProducto);
 			let listaActualizada = JSON.stringify(products);
-			fs.writeFileSync(path.join(__dirname, '../data/products.json'),listaActualizada);
+			fs.writeFileSync(path.join(__dirname, '../database/products.json'),listaActualizada);
 			res.redirect('/products/detail/' + nuevoProducto.id);
 
 		} else {
@@ -79,7 +79,7 @@ const controller = {
 		for(let i = 0; i < products.length; i++) {
 			if(products[i].id == productoActualizado.id) {
 				products[i] = productoActualizado;
-				fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products));
+				fs.writeFileSync(path.join(__dirname, '../database/products.json'), JSON.stringify(products));
 				res.redirect('/products/detail/' + productoActualizado.id)
 			}
 		}
@@ -91,7 +91,7 @@ const controller = {
 			if(products[i].id == req.params.productId) {
 				let index = products.indexOf(products[i]);
 				products.splice(index, 1);
-				fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products));
+				fs.writeFileSync(path.join(__dirname, '../database/products.json'), JSON.stringify(products));
 				res.redirect('/products?status=ok')
 			}
 		}	
