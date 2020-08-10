@@ -11,6 +11,7 @@
     "datatables.net": "^1.10.21",
     "datatables.net-dt": "^1.10.21",
     "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-breadcrumbs": "0.0.2",
@@ -24,5 +25,8 @@
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
     "sequelize": "^6.3.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
   }
 }
