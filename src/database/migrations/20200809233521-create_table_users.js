@@ -37,10 +37,6 @@ module.exports = {
         type:Sequelize.DataTypes.STRING(55),
         allowNull: true
       },
-      avatar: {
-        type:Sequelize.DataTypes.STRING(55),
-        allowNull: true
-      },
       group_id: {
         type:Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false
@@ -50,12 +46,11 @@ module.exports = {
         allowNull: false
       },
       createdAt: Sequelize.DataTypes.DATE,
-      updatedAt: Sequelize.DataTypes.DATE
+      updatedAt: Sequelize.DataTypes.DATE,
+
     });
 
-
   },
-
   down: async (queryInterface, Sequelize) => {
     return queryInterface.dropTable('users')
   }
