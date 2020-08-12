@@ -10,7 +10,7 @@ module.exports = {
       },
       name: {
         type: Sequelize.DataTypes.STRING(60),
-        allowNull: false
+        allowNull: true
       },
       email: {
         type: Sequelize.DataTypes.STRING(100),
@@ -20,6 +20,10 @@ module.exports = {
       password: {
         type:Sequelize.DataTypes.STRING(100),
         allowNull: false
+      },
+      dni: {
+        type:Sequelize.INTEGER(8).UNSIGNED,
+        allowNull: true
       },
       phone: {
         type:Sequelize.DataTypes.STRING(45),
@@ -38,15 +42,19 @@ module.exports = {
         allowNull: true
       },
       group_id: {
-        type:Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+        type:Sequelize.DataTypes.INTEGER(1).UNSIGNED,
+        allowNull: false
+      },
+      active: {
+        type:Sequelize.DataTypes.INTEGER(1).UNSIGNED,
         allowNull: false
       },
       remember_token: {
         type:Sequelize.DataTypes.STRING(45),
         allowNull: false
       },
-      createdAt: Sequelize.DataTypes.DATE,
-      updatedAt: Sequelize.DataTypes.DATE,
+      created_at: Sequelize.DataTypes.DATE,
+      updated_at: Sequelize.DataTypes.DATE,
 
     });
 

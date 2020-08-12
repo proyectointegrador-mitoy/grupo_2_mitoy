@@ -4,17 +4,19 @@ const faker = require('faker');
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('users', [{
-      name: 'German Settino',
+      name: null,
       email: 'German.settino@gmail.com',
       password: faker.internet.password(16),
+      dni: '12345678',
       phone: faker.phone.phoneNumber('0165#######'),
       street: 'Artigos 5500',
       gender: 'Masculino',
       avatar: 'imagen2.jpg',
       group_id: 0,
+      active: 1,
       remember_token: 'bbbbbb',
-      createdAt: new Date(),
-      updatedAt: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     }]);
   },
 

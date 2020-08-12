@@ -1,23 +1,23 @@
-var breadCrumbsMiddleware = function() {
+var breadcrumbsMiddleware = function() {
 	return function(req, res, next) {
 		var path = req.originalUrl	
 
-		var breadCrumbs = path.split('/')
+		var breadcrumbs = path.split('/')
 
-		var index = breadCrumbs.indexOf("")
+		var index = breadcrumbs.indexOf("")
 		while(index !== -1){
-			breadCrumbs.splice(index, 1)
-			index = breadCrumbs.indexOf("")
+			breadcrumbs.splice(index, 1)
+			index = breadcrumbs.indexOf("")
 		}
 
-		breadCrumbs.splice(0,0,"Home")
+		breadcrumbs.splice(0,0,"Home")
 		req.breadcrumbs = []
 		
 		//var urlPath = req.headers.host //localhost:3000 lo comento xq local no funca
 
 		var urlPath = ""
 
-		for (var i = 0; i <= breadCrumbs.length - 1; i++) {
+		for (var i = 0; i <= breadcrumbs.length - 1; i++) {
 
 			//LO SACQ SI NO ES LOCALHOST
 			if (i==0){
@@ -26,15 +26,15 @@ var breadCrumbsMiddleware = function() {
 			//---
 
 			req.breadcrumbs.push({
-				name: breadCrumbs[i],
+				name: breadcrumbs[i],
 				url: urlPath
 			})
 
-			console.log(req.breadcrumbs[i])
+			//console.log(req.breadcrumbs[i])
 
-			if (breadCrumbs[i+1]) {
-				//urlPath += "/" + breadCrumbs[i+1] // SOLO PARA CUANDO NO ES LOCALHOST
-				urlPath += breadCrumbs[i+1]
+			if (breadcrumbs[i+1]) {
+				//urlPath += "/" + breadcrumbs[i+1] // SOLO PARA CUANDO NO ES LOCALHOST
+				urlPath += breadcrumbs[i+1]
 			}
 		}
 		next()
@@ -42,5 +42,5 @@ var breadCrumbsMiddleware = function() {
 }
 
 module.exports = {
-	breadCrumbsMiddleware
+	breadcrumbsMiddleware
 }
