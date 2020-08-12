@@ -17,7 +17,7 @@ router.post('/register/', registerValidation, registerMiddleware, userController
 router.get('/login', userController.login);
 router.post('/login', loginValidation, userController.verify);
 
-router.get('/', authMiddleware ,userController.welcome);
+router.get('/', authMiddleware, userController.welcome);
 
 router.get('/logout', authMiddleware, userController.logout);
 

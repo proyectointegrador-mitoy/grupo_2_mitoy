@@ -1,100 +1,116 @@
-const fs = require('fs');
-const path = require('path');
-const { response } = require('../app');
-
-const productsFilePath = path.join(__dirname, '../database/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const {check, validationResult, body} = require('express-validator');
+const db = require('../database/models');
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const controller = {
+const productsController = {
 	// Root - Show all products
 	root: (req, res) => {
-		res.render('products', {products : products , breadcrumbs: req.breadcrumbs } );
-	},
+		db.Product.findAll()
+		.then(function(products) {
+		   res.render('products', { products : products , breadcrumbs : req.breadcrumbs });
+		})	
+    },
 
 	// Detail - Detail from one product
-	detail: (req, res) => {
-        let productId = req.params.productId;
-        products.forEach(function(elemento) {
-            if(elemento.id == productId) {
-           	     res.render('detail', {breadcrumbs: req.breadcrumbs, elProducto: elemento});
-		    }
-        });		
+	detail: (req, res, next) => {
+        db.Product.findByPk(req.params.productId)
+        .then(function(resultado) {
+			res.render('detail', { elProducto : resultado , breadcrumbs : req.breadcrumbs});
+		});	
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('product-create-form', {breadcrumbs: req.breadcrumbs});
+		db.Material.findAll()
+		.then(function(materiales) {
+ 			db.Color.findAll()
+			.then(function(colores) {
+				db.Category.findAll()
+				.then(function(categorias) {
+					res.render('product-create-form', { 
+						materiales : materiales,
+						colores : colores,
+						categorias : categorias,
+						breadcrumbs : req.breadcrumbs 
+					});
+				})					
+			})				
+		})	
 	},
 	
 	// Create -  Method to store
 	store:(req, res, next) => {
 
-		let errors = validationResult(req);
+	      let errors = validationResult(req);
+		  if (errors.isEmpty()) {
+			  	const image = req.files[0] ? req.files[0].filename : null
+			    db.Product.create({
+			 		 name : req.body.name,
+			 		 material_id : req.body.material,
+					 price : req.body.price,
+			 		 color_id : req.body.color,
+			 		 discount : req.body.discount,
+					 stock : req.body.stock,
+			 		 category_id : req.body.category,
+			 		 age : req.body.age,
+					 description : req.body.description,
+			 		 image : image
+			  	})
+			  	 .then(function(resultado) {
+		 		  res.redirect('/products');				  
+		     });		 	
+		  } else {
 
-		if (errors.isEmpty()) {
-
-			const image = req.files[0] ? req.files[0].filename : null
-			let nuevoProducto = {
-				id : (products.length + 1),
-				...req.body,
-				image,	
-			};
-
-			products.push(nuevoProducto);
-			let listaActualizada = JSON.stringify(products);
-			fs.writeFileSync(path.join(__dirname, '../database/products.json'),listaActualizada);
-			res.redirect('/products/detail/' + nuevoProducto.id);
-
-		} else {
-
-            res.render('product-create-form', {	
-				breadcrumbs: req.breadcrumbs, 
-				errors: errors.mapped(),
-                old: req.body
-            })
-        }
+              res.render('product-create-form', {	
+			  		breadcrumbs: req.breadcrumbs, 
+			  		errors: errors.mapped(),
+                    old: req.body
+              })
+         }
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
-        let productId = req.params.productId;
-        products.forEach(function(elemento) {
-            if(elemento.id == productId) {
-           	     res.render('product-edit-form', {breadcrumbs: req.breadcrumbs, elProducto: elemento});
-		    }
-        });	
+        db.Product.findByPk(req.params.productId)
+        .then(function(resultado) {
+			res.render('product-edit-form', { elProducto : resultado , breadcrumbs : req.breadcrumbs});
+		});	
 	},
 	// Update - Method to update
 	update: (req, res) => {
-
- 		let productoActualizado = {
-			id : Number(req.params.productId),
-			...req.body	
-		};
-
-		for(let i = 0; i < products.length; i++) {
-			if(products[i].id == productoActualizado.id) {
-				products[i] = productoActualizado;
-				fs.writeFileSync(path.join(__dirname, '../database/products.json'), JSON.stringify(products));
-				res.redirect('/products/detail/' + productoActualizado.id)
+		db.Product.update({
+			name : req.body.name,
+			material_id : req.body.material,
+		    price : req.body.price,
+			color_id : req.body.color,
+			discount : req.body.discount,
+		    stock : req.body.stock,
+			category_id : req.body.category,
+			age : req.body.age,
+		    description : req.body.description,
+			//image : image
+		  },
+		  {
+			where: {
+			  id: req.params.productId
 			}
-		}
+		  })
+		  .then(function() {
+			res.redirect('/products/detail/' + req.params.productId);
+		  }); 
+
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		for(let i = 0; i < products.length; i++) {
-			if(products[i].id == req.params.productId) {
-				let index = products.indexOf(products[i]);
-				products.splice(index, 1);
-				fs.writeFileSync(path.join(__dirname, '../database/products.json'), JSON.stringify(products));
-				res.redirect('/products?status=ok')
+		db.Product.destroy({
+			where: {
+			  id: req.params.productId
 			}
-		}	
+		  })
+		  .then(function() {
+			res.redirect('/products?status=ok')
+		  });
+
 	},
 
 	shopping: (req, res) => {
@@ -102,4 +118,4 @@ const controller = {
 	}
 };
 
-module.exports = controller;
+module.exports = productsController;

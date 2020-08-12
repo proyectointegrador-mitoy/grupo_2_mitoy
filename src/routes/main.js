@@ -5,13 +5,13 @@ const router = express.Router();
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
 
-const breadcrumbs = require('../middlewares/breadCrumbsMiddleware');
+const breadcrumbs = require('../middlewares/breadcrumbsMiddleware');
 
 router.get('/', mainController.root); /* GET - home page */
 
-router.get('/politics', breadcrumbs.breadCrumbsMiddleware(), mainController.politics );
+router.get('/politics', breadcrumbs.breadcrumbsMiddleware(), mainController.politics );
 
-router.get('/sucursales', breadcrumbs.breadCrumbsMiddleware(), mainController.sucursales );
+router.get('/sucursales', breadcrumbs.breadcrumbsMiddleware(), mainController.sucursales );
 
 
 

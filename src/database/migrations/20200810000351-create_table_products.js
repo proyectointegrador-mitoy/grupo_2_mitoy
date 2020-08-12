@@ -43,16 +43,16 @@ module.exports = {
         type:Sequelize.DataTypes.STRING(55),
         allowNull: true
       },
-      quantity: {
+      stock: {
         type:Sequelize.DataTypes.INTEGER(3).UNSIGNED,
         allowNull: false
       },
-      details: {
+      description: {
         type:Sequelize.DataTypes.STRING(255),
         allowNull: false
       },
-      createdAt: Sequelize.DataTypes.DATE,
-      updatedAt: Sequelize.DataTypes.DATE
+      created_at: Sequelize.DataTypes.DATE,
+      updated_at: Sequelize.DataTypes.DATE
     });
   },
 
