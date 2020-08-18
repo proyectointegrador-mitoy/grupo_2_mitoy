@@ -16,25 +16,50 @@
       <form method="post">
         <div class="row product-detail">
           <div class="col-12 col-md-12">
-            <label for="text" class="form-label">Nombre de usuario</label>
+            <label for="text" class="form-label">Nombre</label>
             <input type="text" value="" name="nombreUsuario" class="form-input" id="nombreUsuario" aria-describedby="nombreUsuario">
           </div>
-
           
+          <div class="col-12 col-md-12">
+            <label for="exampleInputEmail1" class="form-label">E-mail</label>
+            <input type="text" value="" name="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+
+          <div class="col-12 col-md-12">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="number" max="8" value="" name="dni" class="form-input" id="dni">
+          </div>	
+
+          <div class="col-12 col-md-12">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="number" value="" name="telefono" class="form-input" id="telefono">
+          </div>	
+          
+          <div class="col-12 col-md-12">
+            <label for="date" class="form-label">Direccion</label>
+            <input type="date" value="" name="fechaNacimiento" class="form-input" id="fechaNacimiento">
+          </div>	
+<!-- 
           <div class="col-12 col-md-12">
             <label for="date" class="form-label">Fecha de nacimiento</label>
             <input type="date" value="" name="fechaNacimiento" class="form-input" id="fechaNacimiento">
-          </div>					
+          </div>					 -->
  
           <div class="col-12 col-md-12">
-            <label for="text" class="form-label">Sexo</label><br>
-            <label for="text" class="form-label">Hombre</label>
-            <input type="radio" name="sexo" value="Hombre"><br>
-            <label for="text" class="form-label">Mujer</label>
-            <input type="radio" name="sexo" value="Mujer"><br><br>
+            <label for="text" class="form-label">Genero</label><br>
+            <label for="text" class="form-label">Masculino</label>
+            <input type="radio" name="genero" value="masculino"><br>
+            <label for="text" class="form-label">Femenino</label>
+            <input type="radio" name="genero" value="femenino"><br><br>
           </div>
 
           <div class="col-12 col-md-12">
+						<label for="avatar" class="form-label">Avatar</label>
+						<input type="file" id="avatar" name="avatar">
+          </div>
+          
+
+          <!-- <div class="col-12 col-md-12">
             <label for="contacto" class="form-label">¿Cómo nos conociste?</label><br>
 
             <label for="contacto" class="form-label">A través de una publicidad online</label>
@@ -51,7 +76,7 @@
             
             <label for="contacto" class="form-label">Otros</label>
             <input type="checkbox" name="nosConociste" value="Otros"><br>
-          </div>			  
+          </div>			   -->
 
 
           <div class="col-12">

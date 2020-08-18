@@ -5,6 +5,7 @@ const path = require('path');
 
 const productsController = require('../controllers/productsController');
 const breadcrumbs = require('../middlewares/breadcrumbsMiddleware');
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const productsValidation = require('../validations/productsValidation');
 
@@ -27,7 +28,6 @@ router.get('/', breadcrumbs.breadcrumbsMiddleware(), productsController.root); /
 router.get('/detail/:productId/', breadcrumbs.breadcrumbsMiddleware(), productsController.detail); /* GET - Detalle de un producto particular*/
 
 
-router.get('/create/', breadcrumbs.breadcrumbsMiddleware(), productsController.create); /* GET - Formulario de creación de productos*/
 //router.post('/create/', productsValidation, upload.any(), productsController.store); /* POST - Acción de creación (a donde se envía el formulario)*/
 router.post('/create/',  upload.any(), productsController.store); 
 
@@ -37,6 +37,14 @@ router.put('/edit/:productId', productsController.update); /* PUT - Acción de e
 router.delete('/delete/:productId', productsController.destroy); /* DELETE - Acción de borrado*/
 
 router.get('/shopping/', breadcrumbs.breadcrumbsMiddleware(), productsController.shopping); /* GET - Form to create */
+
+/* ==========
+A ESTAS RUTAS SOLO PUEDEN ACCEDER LOS USUARIOS LOGUEADOS
+========== */
+
+// GET - Formulario de creación de productos:
+router.get('/create/', breadcrumbs.breadcrumbsMiddleware(), authMiddleware, productsController.create); // --> ¡SOLO ADMIN!
+
 
 
 

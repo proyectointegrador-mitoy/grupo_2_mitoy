@@ -30,12 +30,12 @@ module.exports = {
         avatar: null,
         group_id: 1,
         active: 0,
-        remember_token: null,
+        remember_token: '12345678',
         createdAt: new Date(),
         updatedAt: new Date()
       })
-        .then(function (resultado) {
-          res.redirect('/');
+        .then(function (resultado) {       
+          res.redirect('/users/login');
         });
       }else {
         res.render('register', {
@@ -81,7 +81,7 @@ module.exports = {
 
   },
   welcome: function (req, res, next) {
-    res.render('index', { usuario: req.session.emailUsuario });
+    res.render('welcome', { usuario: req.session.emailUsuario });
   },
 
   logout: function (req, res, next) {
@@ -110,11 +110,11 @@ module.exports = {
   },
 
   accessEditUser: function (req, res) {
-    res.render('edit');
+    res.render('edit-user');
   },
 
   editUser: function (req, res) {
-    /*    let nuevoDetalleUsuario = {
+        let nuevoDetalleUsuario = {
             email: req.body.email,
             nombreUsuario: req.body.nombreUsuario,
             fechaNacimiento: req.body.fechaNacimiento,
@@ -125,7 +125,7 @@ module.exports = {
         detallesUsuarios.push(nuevoDetalleUsuario);
         fs.writeFileSync(path.join(__dirname, '../database/detallesUsuarios.json'), JSON.stringify(detallesUsuarios));
 
-        return res.redirect('editsuccess');*/
+        return res.redirect('editsuccess');
   },
 
   editsuccess: function (req, res) {

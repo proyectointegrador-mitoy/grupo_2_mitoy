@@ -30,12 +30,16 @@
                                 <span class="d-none d-md-none d-lg-inline-block">Mi cuenta</span>
                             </a>
                             <div class="dropdown-menu">
-                                <a href="/users/register" class="dropdown-item">Registro</a>
-                                <a href="/users/login" class="dropdown-item">Iniciar sesión</a>
-                                <a href="/users/edit-login" class="dropdown-item">Completar datos de usuario</a>
-                                <div class="dropdown-divider"></div>
-   
-                                <a href="/products" class="dropdown-item">Carga de Productos</a>
+                                <% if(typeof usuarioLogueado != "undefined") { %>
+                                    <a href="/users/edit-login" class="dropdown-item">Mi perfil</a>
+                                    <% if(usuarioLogueado.group == 1) { %>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="/products" class="dropdown-item">Carga de Productos</a>
+                                    <% } %>
+                                <% } else { %>
+                                    <a href="/users/register" class="dropdown-item">Registro</a>
+                                    <a href="/users/login" class="dropdown-item">Iniciar sesión</a>
+                                <% } %>
                             </div>
                         </li>
                         <li class="nav-item"><a href="/products/shopping" title="Carrito de compras" class="nav-link">

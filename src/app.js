@@ -23,7 +23,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
-app.use(session({secret: 'shhhhh', resave: true,saveUninitialized: true}));
+app.use(session({secret: 'shhhhh', resave: true, saveUninitialized: true}));
+
+app.use(authCookieMiddleware);
 
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETEno
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
@@ -34,8 +36,6 @@ app.use('/', mainRouter); // Ru
 app.use('/users', usersRouter);// Rutas /users
 app.use('/products', productsRouter);// Rutas /products
 
- 
-app.use(authCookieMiddleware);
 
 // ************ catch 404 and forward to error handler ************
 // catch 404 and forward to error handler
