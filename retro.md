@@ -17,6 +17,9 @@
     #Sprint 2 nuevamente fue difícil dividir las tareas y coordinar los tiempos.
     #Sprint 3 el menu hamburguesa se nos complico dejamos lo mejor que pudimos y no nos quedó bien en una parte aunque probamos varios numeros. 
     #Sprint 4 Cuando se implementó el registro de usuarios y el formulario para registración rápida se complicó para subir a git hub, pero en equipo se pudo encontrar el error. 
+    #Sprint 5 Fue dificil configurar las migraciones, seeders y estructurado de carpetas. 
+    Además tuvimos problemas para crear las tablas y notamos que era porque las hicimos y luego cambiamos y no borramos las anteriores.La parte de login y las validaciones tambien fueron complicadas. Pero con los ejemplos de códigos del curso se pudo solucionar luego de algunos intentos.
+    
 
 2. Fortalezas 
 
@@ -26,3 +29,5 @@
     #4 El segundo sprint fue entregado a tiempo y pudimos cada uno hacer un poco aunque sobre la hora.
     #5 El tercer sprint nos juntamos y leimos las consignas y pudimos dividir de mejor forma entre todos y concretar los principales objetivos a tiempo. Cargamos más productos, adicionamos el repositorio, mas imagenes de productos y para poder cargarlos con facilidad.
     #6 El cuarto sprint ya fue más facil de coordinar y pudimos repartir las tareas y los tiempos.
+    #7 En el quinto sprint   Se creó el .sequalizerc para  la base de datos “mysql”. Se hizo a parte en “dotenv” el documento a parte para mantener segura la contraseña de la base de datos que no se suben en Git, solamente se subio el ejemplo. 
+ 
