@@ -36,7 +36,7 @@ module.exports = [
     }).withMessage('Este mail no se encuentra registrado!'),
     
     check('password')
-      .isLength({min: 4, max: 8}).withMessage('La Contrasena debe contener entre 4 y 8 caracteres!'),
+      .isLength({min: 4, max: 10}).withMessage('La Contrasena debe contener entre 4 y 10 caracteres!'),
     check('repassword')
-      .isLength({min: 4, max: 8}).withMessage('La Contrasena debe contener entre 4 y 8 caracteres!')
+      .isLength({min: 4, max: 10}).withMessage('La Contrasena debe contener entre 4 y 10 caracteres!')
 ];
