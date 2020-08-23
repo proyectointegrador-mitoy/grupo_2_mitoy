@@ -4,7 +4,7 @@ const faker = require('faker');
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [{
-      name: 'Ajedrez',
+      name: 'Bloques personalizables',
       material_id: 2,
       color_id: 1,
       category_id: 0,
@@ -13,7 +13,7 @@ module.exports = {
       price: 1200,
       image: 'imagen2.jpg',
       stock:3,
-      description:'Descripcion de un ajedrez de color celeste.',
+      description:'Descripcion de un bloques con tiza para dibujar.',
       created_at: new Date(),
       updated_at: new Date()
     },
