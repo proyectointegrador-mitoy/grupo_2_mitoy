@@ -24,28 +24,27 @@ let storage = multer.diskStorage({
 
 let upload = multer({ storage })
 
-router.get('/', breadcrumbs.breadcrumbsMiddleware(), productsController.root); /* GET - Todos los productos */
-router.get('/detail/:productId/', breadcrumbs.breadcrumbsMiddleware(), productsController.detail); /* GET - Detalle de un producto particular*/
+
+/* ==========
+A ESTAS RUTAS TODOS LOS USUARIOS
+========== */
 
 
-//router.post('/create/', productsValidation, upload.any(), productsController.store); /* POST - Acción de creación (a donde se envía el formulario)*/
-router.post('/create/',  upload.any(), productsController.store); 
+router.get('/detail/:productId/', breadcrumbs.breadcrumbsMiddleware(), productsController.detail);  
 
-router.get('/edit/:productId', breadcrumbs.breadcrumbsMiddleware(), productsController.edit); /* GET - Formulario de edición de productos */
-router.put('/edit/:productId', productsController.update); /* PUT - Acción de edición (a donde se envía el formulario):*/
-
-router.delete('/delete/:productId', productsController.destroy); /* DELETE - Acción de borrado*/
-
-router.get('/shopping/', breadcrumbs.breadcrumbsMiddleware(), productsController.shopping); /* GET - Form to create */
+router.get('/shopping/', breadcrumbs.breadcrumbsMiddleware(), productsController.shopping);  
 
 /* ==========
 A ESTAS RUTAS SOLO PUEDEN ACCEDER LOS USUARIOS LOGUEADOS
 ========== */
 
-// GET - Formulario de creación de productos:
-router.get('/create/', breadcrumbs.breadcrumbsMiddleware(), authMiddleware, productsController.create); // --> ¡SOLO ADMIN!
-
-
+router.get('/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.root);  
+router.get('/create/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.create); // --> ¡SOLO ADMIN!
+// router.post('/create/', productsValidation, upload.any(), productsController.store); 
+router.post('/create/', authMiddleware, upload.any(), productsController.store); 
+router.delete('/delete/:productId', authMiddleware, productsController.destroy); 
+router.get('/edit/:productId', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.edit); 
+router.put('/edit/:productId', authMiddleware, productsController.update); 
 
 
 module.exports = router;

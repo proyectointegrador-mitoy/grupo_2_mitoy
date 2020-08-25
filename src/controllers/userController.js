@@ -87,7 +87,7 @@ module.exports = {
   logout: function (req, res, next) {
     req.session.destroy();
     res.cookie('authRemember', '', { maxAge: 60000 * 0 });
-    res.redirect('/login');
+    res.redirect('/users/login');
   },
 
   editLogin: function (req, res) {
