@@ -3,10 +3,17 @@ const db = require('../database/models');
 
 const productsController = {
 	// Root - Show all products
-	root: (req, res) => {
+	/*root: (req, res) => {
 		db.Product.findAll()
 		.then(function(products) {
 		   res.render('products', { products : products , breadcrumbs : req.breadcrumbs });
+		})	
+	},*/
+	
+	root: (req, res) => {
+		db.Product.findAll()
+		.then(function(products) {
+		   res.render('index', {products: products});
 		})	
     },
 
@@ -115,7 +122,29 @@ const productsController = {
 
 	shopping: (req, res) => {
 		res.render('shopping', {breadcrumbs: req.breadcrumbs});
-	}
-};
+	},
 
+	news: (req, res) => {
+		db.Product.findAll ().then (resultado =>{
+			console.log(resultado);
+		})
+		db.Product.findAll ({
+			where: {
+				category_id: 3
+			}
+		}).then (resultados => {
+			console.log ('imprimiendo resultados' + resultados);
+			res.render ('news', {resultados:resultados});
+		})},
+
+	onsale: (req, res) => {
+		db.Product.findAll ({
+			where: {
+				category_id: 2
+			}
+		}).then (resultados => {
+			console.log ('imprimiendo resultados' + resultados);
+			res.render ('onsale', {resultados:resultados});
+		})}
+};
 module.exports = productsController;

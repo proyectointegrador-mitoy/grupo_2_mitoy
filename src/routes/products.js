@@ -1,9 +1,8 @@
-const express = require('express');
+const express = require ('express');
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
-
-const productsController = require('../controllers/productsController');
+const multer = require ('multer');
+const path = require ('path');
+const productsController = require ('../controllers/productsController');
 const breadcrumbs = require('../middlewares/breadcrumbsMiddleware');
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -34,17 +33,23 @@ router.get('/detail/:productId/', breadcrumbs.breadcrumbsMiddleware(), productsC
 
 router.get('/shopping/', breadcrumbs.breadcrumbsMiddleware(), productsController.shopping);  
 
+router.get('/', productsController.root);  
+
+router.get ('/news', productsController.news);
+
+router.get ('/onsale', productsController.onsale);
+
 /* ==========
 A ESTAS RUTAS SOLO PUEDEN ACCEDER LOS USUARIOS LOGUEADOS
 ========== */
 
-router.get('/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.root);  
+//router.get('/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.root);  
+
 router.get('/create/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.create); // --> ¡SOLO ADMIN!
 // router.post('/create/', productsValidation, upload.any(), productsController.store); 
 router.post('/create/', authMiddleware, upload.any(), productsController.store); 
 router.delete('/delete/:productId', authMiddleware, productsController.destroy); 
 router.get('/edit/:productId', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.edit); 
 router.put('/edit/:productId', authMiddleware, productsController.update); 
-
 
 module.exports = router;

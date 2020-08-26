@@ -60,3 +60,7 @@
 .form-check-label {
   font-size: 16px;
 }
+
+.center-box {
+  justify-content: space-around;
+}

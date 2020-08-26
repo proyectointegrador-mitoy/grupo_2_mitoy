@@ -14,13 +14,13 @@
   },
   {
     "id": 2,
-    "name": "Macbook Pro ",
+    "name": "Macbook Pro",
     "material": "",
-    "price": "12.0000",
+    "price": "36.000",
     "color": "",
-    "discount": "10.00",
-    "stock": "1200",
-    "category": "",
+    "discount": "10%",
+    "stock": "500",
+    "category": "1",
     "age": "1",
     "imagen": "",
     "description": "ad"
@@ -33,7 +33,7 @@
     "color": "",
     "discount": "10",
     "stock": "10",
-    "category": "in-sale",
+    "category": "2",
     "age": "3",
     "description": "Bloques de madera de armar apto para bebés hasta los 3 años. ",
     "image": "imagen-1594411479480.jpeg"
@@ -46,7 +46,7 @@
     "color": "",
     "discount": "10",
     "stock": "20",
-    "category": "visited",
+    "category": "3",
     "age": "8",
     "description": "Juego de ajedrez de madera de pino color oscuro y claro, con caja para guardar. ",
     "image": "imagen-1594411635236.jpeg"
@@ -59,7 +59,7 @@
     "color": "",
     "discount": "10",
     "stock": "30",
-    "category": "visited",
+    "category": "1",
     "age": "4",
     "description": "Auto apto para niños de 3 a 7 años, totalmente de madera reciclada, ecológico. ",
     "image": "imagen-1594411773613.jpeg"
@@ -72,7 +72,7 @@
     "color": "",
     "discount": "10",
     "stock": "100",
-    "category": "in-sale",
+    "category": "2",
     "age": "2",
     "description": "Bloques que arman una casa, totalmente en madera, apto para bebés y niños hasta los 3 años.",
     "image": "imagen-1594411908884.jpeg"
@@ -87,7 +87,7 @@
     "stock": "10",
     "category": "visited",
     "age": "3",
-    "description": "Muy novedoso, ññññññññññññññññññññ  ",
+    "description": "3",
     "image": "imagen-1595458360323.png"
   },
   {
@@ -98,7 +98,7 @@
     "color": "",
     "discount": "10",
     "stock": "30",
-    "category": "visited",
+    "category": "1",
     "age": "7",
     "description": "Juguete de nuestra epocas!!!!11",
     "image": "imagen-1595458611791.jpg"
