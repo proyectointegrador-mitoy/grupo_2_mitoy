@@ -15,7 +15,7 @@
         <p>Completa tu email y tu contraseña para registrarte.</p>
       </div>
       <div class="errores">
-        <ul style="color:red"></ul>
+        <ul class="text-danger"></ul>
       </div>
 
     </div>
@@ -26,19 +26,20 @@
             <label for="exampleInputEmail1" class="form-label">E-MAIL</label>
             <input type="email" value="" id="email" name="email"<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
-          </div>
-
-          
-          <div class="col-12 col-md-12">
+            <small id="errEmail" class="text-danger"></small>
+           </div>
+           <div class="col-12 col-md-12">
             <label for="exampleInputPassword1" class="form-label">CONTRASEÑA</label>
             <input type="password" value="" id="password" name="password" class="form-input" id="exampleInputPassword1">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>  
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small> 
+            <small id="errPassword" class="text-danger"></small>
           </div>					
  
           <div class="col-12 col-md-12">
             <label for="exampleInput-RePassword1" class="form-label">REPITA CONTRASEÑA</label>
             <input type="password" value=""id="repassword" name="repassword" class="form-input" id="exampleInput-RePassword1">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.repassword) ? errors.repassword.msg : '' %></small>  
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.repassword) ? errors.repassword.msg : '' %></small> 
+            <small id="errassword" class="text-danger"></small> 
           </div>			  
 
 

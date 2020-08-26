@@ -2,6 +2,9 @@
 <html lang="es">
 <!-- Include Head -->
 <%- include('partials/head', {title: 'Formulario de creación'}) %>
+<!-- Js Front -->
+<script src="../../JsFront/products.js"></script>
+	
 
 <body>
 	<!-- Header -->
@@ -10,24 +13,22 @@
 
 	<div class="container products-wrapper">
 
-		<%- include('partials/breadCrumbs') %>
+		
 
 		<div class="row">
 			<div class="col-12">
 				<h3>Carga de Productos</h3>
 			</div>
 			
-			<div class="errores">
-				<ul style="color:red"></ul>
-			  </div>
 		</div>
 		<div class="col-12">
 			<form action="" id="products" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre: *</label>
-						<input type="text" id="name" value="<%= (typeof old != 'undefined' && !errors.name) ? old.name : '' %>" name="name" placeholder="Ej: juguete 1" class="form-input"	>
+						<input type="text" id="name" value=""<%= (typeof old != 'undefined' && !errors.name) ? old.name : '' %>" name="name" placeholder="Ej: juguete 1" class="form-input"	>
 						<small class="text-danger"><%= (typeof errors != 'undefined' && errors.name) ? errors.name.msg : '' %></small>
+						<small class="text-danger" id="name"></small>
 					</div>
 
 					<div class="col-12 col-md-6">
@@ -85,9 +86,13 @@
 						<label for="description" class="form-label">Descipción: *</label>
 						<textarea name="description" id="description" class="form-input" ></textarea>
 					</div>
+					
+			<div class="errores">
+				<ul class="text-danger"></ul>
+			  </div>
 
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Guardar</button>
+						<button type="submit" id="guardar" class="buy-now-button">Guardar</button>
 					</div>
 				</div>
 			</form>
