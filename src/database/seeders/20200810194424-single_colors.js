@@ -4,7 +4,7 @@ const faker = require('faker');
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('colors', [{
-      name: 'Maderas',
+      name: 'Rojo',
       code:'0000055',
 
     }]);

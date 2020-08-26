@@ -2,6 +2,9 @@
 <html lang="es">
 <!-- Include Head -->
 <%- include('partials/head', {title: 'Formulario de creación'}) %>
+<!-- Js Front -->
+<script src="../../JsFront/products.js"></script>
+	
 
 <body>
 	<!-- Header -->
@@ -10,24 +13,22 @@
 
 	<div class="container products-wrapper">
 
-		<%- include('partials/breadCrumbs') %>
+		
 
 		<div class="row">
 			<div class="col-12">
 				<h3>Carga de Productos</h3>
 			</div>
 			
-			<div class="errores">
-				<ul style="color:red"></ul>
-			  </div>
 		</div>
 		<div class="col-12">
 			<form action="" id="products" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre: *</label>
-						<input type="text" id="name" value="<%= (typeof old != 'undefined' && !errors.name) ? old.name : '' %>" name="name" placeholder="Ej: juguete 1" class="form-input"	required>
+						<input type="text" id="name" value=""<%= (typeof old != 'undefined' && !errors.name) ? old.name : '' %>" name="name" placeholder="Ej: juguete 1" class="form-input"	>
 						<small class="text-danger"><%= (typeof errors != 'undefined' && errors.name) ? errors.name.msg : '' %></small>
+						<small class="text-danger" id="name"></small>
 					</div>
 
 					<div class="col-12 col-md-6">
@@ -42,7 +43,7 @@
 
 					<div class="col-12 col-md-6">
 						<label for="price" class="form-label">Precio: *</label>
-						<input type="text" id="price" name="price" placeholder="Ej: 999" class="form-input" required>
+						<input type="text" id="price" name="price" placeholder="Ej: 999" class="form-input">
 					</div>
 
 					<div class="col-12 col-md-6">
@@ -62,7 +63,7 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="stock" class="form-label">Cantidad: *</label>
-						<input type="number" id="stock" name="stock" class="form-input" required>
+						<input type="number" id="stock" name="stock" class="form-input">
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>
@@ -75,7 +76,7 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<label for="age" class="form-label">Edad: *</label>
-						<input type="number" id="age" name="age" class="form-input" required>
+						<input type="number" id="age" name="age" class="form-input" >
 					</div>
 					<div class="col-12">
 						<label for="imagenControl" class="form-label">Imagen</label>
@@ -83,11 +84,15 @@
 					</div>
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción: *</label>
-						<textarea name="description" id="description" class="form-input" required></textarea>
+						<textarea name="description" id="description" class="form-input" ></textarea>
 					</div>
+					
+			<div class="errores">
+				<ul class="text-danger"></ul>
+			  </div>
 
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Guardar</button>
+						<button type="submit" id="guardar" class="buy-now-button">Guardar</button>
 					</div>
 				</div>
 			</form>

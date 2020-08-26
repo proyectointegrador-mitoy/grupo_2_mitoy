@@ -53,3 +53,10 @@
     border-bottom: solid 1px var(--light-gray);
   }
   
+.text-danger {
+  font-size: 16px;
+}
+
+.form-check-label {
+  font-size: 16px;
+}

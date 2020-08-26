@@ -4,17 +4,14 @@ const userController = require('../controllers/userController');
 
 const registerMiddleware = require('../middlewares/registerMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const authEditionMiddleware = require('../middlewares/authEditionMiddleware');
 
 const registerValidation = require('../validations/registerValidation');
 const loginValidation = require('../validations/loginValidation');
 
-router.get('/welcome/', userController.welcome);
- 
+router.get('/welcome/', authMiddleware, userController.welcome);//NO SE USA
 
 router.get('/register/', userController.register);
 router.post('/register/', registerValidation, registerMiddleware, userController.save);
-
 
 router.get('/login', userController.login);
 router.post('/login', loginValidation, userController.verify);
@@ -26,9 +23,9 @@ router.get('/logout', authMiddleware, userController.logout);
 //router.get('/edit-login', userController.editLogin);
 //router.post('/edit-login', userController.verifyedit);
 
-router.get ('/edit-user', userController.accessEditUser);
-router.post ('/edit-user', userController.editUser)
+router.get ('/edit-user', authMiddleware, userController.accessEditUser);
+router.post ('/edit-user', authMiddleware, userController.editUser)
 
-router.get ('/editsuccess', userController.editsuccess);
+router.get ('/editsuccess', authMiddleware, userController.editsuccess);
 
 module.exports = router;
