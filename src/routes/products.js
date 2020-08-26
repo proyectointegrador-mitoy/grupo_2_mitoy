@@ -35,7 +35,7 @@ router.get('/detail/:productId/', breadcrumbs.breadcrumbsMiddleware(), productsC
 router.get('/shopping/', breadcrumbs.breadcrumbsMiddleware(), productsController.shopping);  
 
 /* ==========
-A ESTAS RUTAS SOLO PUEDEN ACCEDER LOS USUARIOS LOGUEADOS
+A ESTAS RUTAS SOLO PUEDEN ACCEDER LOS USUARIOS LOGUEADOS ADMIN
 ========== */
 
 router.get('/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.root);  

@@ -33,7 +33,7 @@
 
                                 <%=typeof usuarioLogueado %>
                                 <% if(typeof usuarioLogueado != "undefined") { %>
-                                    <a href="/users/edit-login" class="dropdown-item"><%= usuarioLogueado.email %></a>
+                                    <a href="/users/edit-user" class="dropdown-item"><%= usuarioLogueado.email %></a>
                                     <% if(usuarioLogueado.group == 1) { %>
                                         <div class="dropdown-divider"></div>
                                         <a href="/products" class="dropdown-item">Carga de productos</a>

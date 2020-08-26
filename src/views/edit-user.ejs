@@ -13,74 +13,48 @@
       </div>
     </div>
     <div class="col-8">
-      <form method="post">
+      <form action="?_method=PUT" method="post" enctype="multipart/form-data" >
         <div class="row product-detail">
           <div class="col-12 col-md-12">
-            <label for="text" class="form-label">Nombre</label>
-            <input type="text" value="" name="nombreUsuario" class="form-input" id="nombreUsuario" aria-describedby="nombreUsuario">
+            <label for="text" class="form-label">Nombre y Apellido</label>
+            <input type="text" value="<%= elUsuario.name %>" name="name" class="form-input" id="name" aria-describedby="name">
           </div>
           
           <div class="col-12 col-md-12">
             <label for="exampleInputEmail1" class="form-label">E-mail</label>
-            <input type="text" value="" name="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" value="<%= elUsuario.email %>" name="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
 
           <div class="col-12 col-md-12">
             <label for="dni" class="form-label">DNI</label>
-            <input type="number" max="8" value="" name="dni" class="form-input" id="dni">
+            <input type="number" max="8" value="<%= elUsuario.dni %>" name="dni" class="form-input" id="dni">
           </div>	
 
           <div class="col-12 col-md-12">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input type="number" value="" name="telefono" class="form-input" id="telefono">
+            <label for="phone" class="form-label">Telefono</label>
+            <input type="number" value="<%= elUsuario.phone %>" name="phone" class="form-input" id="phone">
           </div>	
           
           <div class="col-12 col-md-12">
-            <label for="date" class="form-label">Direccion</label>
-            <input type="date" value="" name="fechaNacimiento" class="form-input" id="fechaNacimiento">
+            <label for="street" class="form-label">Direccion</label>
+            <input type="text" value="<%= elUsuario.street %>" name="street" class="form-input" id="street">
           </div>	
-<!-- 
-          <div class="col-12 col-md-12">
-            <label for="date" class="form-label">Fecha de nacimiento</label>
-            <input type="date" value="" name="fechaNacimiento" class="form-input" id="fechaNacimiento">
-          </div>					 -->
- 
+  
           <div class="col-12 col-md-12">
             <label for="text" class="form-label">Genero</label><br>
             <label for="text" class="form-label">Masculino</label>
-            <input type="radio" name="genero" value="masculino"><br>
+            <input type="radio" name="gender" value="masculino"><br>
             <label for="text" class="form-label">Femenino</label>
-            <input type="radio" name="genero" value="femenino"><br><br>
+            <input type="radio" name="gender" value="femenino"><br><br>
           </div>
 
           <div class="col-12 col-md-12">
 						<label for="avatar" class="form-label">Avatar</label>
 						<input type="file" id="avatar" name="avatar">
           </div>
-          
-
-          <!-- <div class="col-12 col-md-12">
-            <label for="contacto" class="form-label">¿Cómo nos conociste?</label><br>
-
-            <label for="contacto" class="form-label">A través de una publicidad online</label>
-            <input type="checkbox" name="nosConociste" value="publicidadOnline"><br>
-
-            <label for="contacto" class="form-label">A través de una publicidad offline</label>
-            <input type="checkbox" name="nosConociste" value="publicidadOffline"><br>
-            
-            <label for="contacto" class="form-label">Me los recomendó un conocido</label>
-            <input type="checkbox" name="nosConociste" value="Recomendacion"><br>
-            
-            <label for="contacto" class="form-label">Me regalaron algo de acá</label>
-            <input type="checkbox" name="nosConociste" value="Regalo"><br>
-            
-            <label for="contacto" class="form-label">Otros</label>
-            <input type="checkbox" name="nosConociste" value="Otros"><br>
-          </div>			   -->
-
-
+ 
           <div class="col-12">
-            <button type="submit" class="buy-now-button">Guardar</button>
+            <button type="submit" class="buy-now-button">Guardar Usuario</button>
           </div>
 
         </div>

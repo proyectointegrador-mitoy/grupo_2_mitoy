@@ -20,11 +20,11 @@ router.get('/', authMiddleware, userController.welcome);
 
 router.get('/logout', authMiddleware, userController.logout);
 
-//router.get('/edit-login', userController.editLogin);
-//router.post('/edit-login', userController.verifyedit);
+ //router.post('/edit-login', userController.verifyedit);
 
-router.get ('/edit-user', authMiddleware, userController.accessEditUser);
-router.post ('/edit-user', authMiddleware, userController.editUser)
+router.get ('/edit-user/:id', authMiddleware, userController.accessEditUser);
+router.post ('/edit-user/:id', authMiddleware, userController.editUser)
+
 
 router.get ('/editsuccess', authMiddleware, userController.editsuccess);
 

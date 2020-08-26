@@ -90,10 +90,7 @@ module.exports = {
     res.redirect('/users/login');
   },
 
-  editLogin: function (req, res) {
-    res.render('edit-login')
-  },
-
+ 
   verifyedit: function (req, res) {
 
     /*       console.log('llegamos hasta aca');
@@ -109,25 +106,31 @@ module.exports = {
            return res.redirect ('register');  */
   },
 
-  accessEditUser: function (req, res) {
-    res.render('edit-user');
+  accessEditUser: function(req, res, next) {
+    db.User.findByPk(req.params.id)
+    .then(function(elUsuario) {
+        res.render('edit-user', {elUsuario: elUsuario});
+     })
   },
-
-  editUser: function (req, res) {
-        let nuevoDetalleUsuario = {
-            email: req.body.email,
-            nombreUsuario: req.body.nombreUsuario,
-            fechaNacimiento: req.body.fechaNacimiento,
-            sexo: req.body.sexo,
-            nosConociste: req.body.nosConociste
-        }
-            
-        detallesUsuarios.push(nuevoDetalleUsuario);
-        fs.writeFileSync(path.join(__dirname, '../database/detallesUsuarios.json'), JSON.stringify(detallesUsuarios));
-
-        return res.redirect('editsuccess');
+  editUser: function(req, res) {
+    db.User.update({
+      name: req.body.name,
+      email: req.body.email,
+      dni:  req.body.dni,
+      gender: req.body.gender,
+      street: req.body.adress,
+      phone: req.body.phone,
+      image: (!req.files[0]) ? this.image : req.files[0].filename      
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function() {
+      res.redirect('/editsuccess');
+    }); 
   },
-
   editsuccess: function (req, res) {
     res.render('edit-success');
   }

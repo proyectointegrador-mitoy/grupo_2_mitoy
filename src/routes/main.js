@@ -11,8 +11,6 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/', authMiddleware, mainController.root); /* GET - home page */
 
 
-
-
 //-----FOOTER- Contactatos------//
 router.get('/terminos', breadcrumbs.breadcrumbsMiddleware(), mainController.terminos );
 router.get('/politics', breadcrumbs.breadcrumbsMiddleware(), mainController.politics );
