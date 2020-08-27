@@ -68,13 +68,30 @@ const productsController = {
          }
 	},
 
+ 
 	// Update - Form to edit
 	edit: (req, res) => {
-        db.Product.findByPk(req.params.productId)
-        .then(function(resultado) {
-			res.render('product-edit-form', { elProducto : resultado , breadcrumbs : req.breadcrumbs});
-		});	
+		db.Material.findAll()
+		.then(function(materiales) {
+ 			db.Color.findAll()
+			.then(function(colores) {
+				db.Category.findAll()
+				.then(function(categorias) {
+					db.Product.findByPk(req.params.productId)
+					.then(function(resultado) {
+ 						res.render('product-edit-form', {
+							 elProducto : resultado , 
+							 materiales : materiales,
+							 colores : colores,
+							 categorias : categorias,							 
+							 breadcrumbs : req.breadcrumbs
+						});
+					});	
+				});				
+			});		
+		});
 	},
+
 	// Update - Method to update
 	update: (req, res) => {
 		db.Product.update({

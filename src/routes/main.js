@@ -6,9 +6,8 @@ const router = express.Router();
 const mainController = require('../controllers/mainController');
 
 const breadcrumbs = require('../middlewares/breadcrumbsMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
 
-router.get('/', authMiddleware, mainController.root); /* GET - home page */
+router.get('/',  mainController.root); /* GET - home page */
 
 
 //-----FOOTER- Contactatos------//

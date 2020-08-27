@@ -30,16 +30,20 @@
                                 <span class="d-none d-md-none d-lg-inline-block">Mi cuenta</span>
                             </a>
                             <div class="dropdown-menu">
-
-                                <%=typeof usuarioLogueado %>
                                 <% if(typeof usuarioLogueado != "undefined") { %>
-                                    <a href="/users/edit-user" class="dropdown-item"><%= usuarioLogueado.email %></a>
+                                    <a  href="/users/edit-user/<%= usuarioLogueado.id %>" class="dropdown-item">
+                                        <%= usuarioLogueado.email %>
+                                    </a>
                                     <% if(usuarioLogueado.group == 1) { %>
                                         <div class="dropdown-divider"></div>
-                                        <a href="/products" class="dropdown-item">Carga de productos</a>
+                                        <a href="/products" class="dropdown-item">
+                                            Carga de productos
+                                        </a>
                                     <% } %>
                                     <div class="dropdown-divider"></div>
-                                    <a href="/users/logout" class="dropdown-item">Cerrar sesión</a>                                    
+                                    <a href="/users/logout" class="dropdown-item">
+                                        Cerrar sesión
+                                    </a>                                    
                                 <% } else { %>
                                     <a href="/users/register" class="dropdown-item">Registro</a>
                                     <a href="/users/login" class="dropdown-item">Iniciar sesión</a>

@@ -24,32 +24,37 @@
 						<input type="text" id="name" name="name" value="<%= elProducto.name %>" class="form-input" required>
                     </div>
 
-                    <div class="col-12 col-md-6">
-                        <label for="material" class="form-label">Material: *</label>
-                        <select name="material" id="material" class="form-input">
-                            <option value="">Elegí un material</option>
-                            <option value="madera">Madera</option>
-                            <option value="Carton">Carton</option>
-                            <option value="plastico">Plastico</option>
-                            <option value="plastico">Otros</option>
-                        </select>
-                    </div>		
+
+					<div class="col-12 col-md-6">
+						<label for="material" class="form-label">Material: *</label>
+						<select name="material" id="material" class="form-input">
+							<option value="0">Elegí un material</option>
+                            <% for (let i = 0 ; i < materiales.length ; i ++ ) {%>
+                                <option value="<%=materiales[i].id%>" <%= (elProducto.material_id == materiales[i].id) ? "selected" : ""  %> >
+                                    <%=materiales[i].name%>
+                                </option>
+							<% } %>
+						</select>
+					</div>
+
 
                     <div class="col-12 col-md-6">
                         <label for="price" class="form-label">Precio: *</label>
 						<input type="text" id="price" name="price" value="<%= elProducto.price %>" placeholder="Ej: 5678" class="form-input" required>
                     </div>
 
-                    <div class="col-12 col-md-6">
-                        <label for="color" class="form-label">Color:</label>
-                        <select name="color" id="color" class="form-input">
-                            <option value="">Elegí color</option>
-                            <option value="">Violeta</option>
-                            <option value="">Naranja</option>
-                            <option value="">Rojo</option>
-                            <option value="">Verde</option>
-                        </select>	
-                    </div>		
+
+					<div class="col-12 col-md-6">
+						<label for="color" class="form-label">Color:</label>
+						<select name="color" id="color" class="form-input">
+							<option value="0">Elegí color</option>
+                            <% for (let i = 0 ; i < colores.length ; i ++ ) {%>
+                                <option value="<%=colores[i].id%>" <%= (elProducto.color_id == colores[i].id) ? "selected" : ""  %>>
+                                    <%=colores[i].name%>
+                                </option>
+							<% } %>
+						</select>
+					</div>
 
 
                     <div class="col-12 col-md-6">
@@ -60,30 +65,19 @@
                         <label for="stock" class="form-label">Cantidad: *</label>
                         <input type="number" id="stock" name="stock" value="<%= elProducto.stock %>" class="form-input" required>
                     </div>						
+
                     <div class="col-12 col-md-6">
 						<label for="category" class="form-label">Categoría:</label>
-
-						<% 
-						let sel = "";
-						if (elProducto.category == "in-sale") {
-							sel = "selected";	
-						}else{
-							sel = "";	
-						}  
-						let sel2 = "";
-						if (elProducto.category == "visited") {
-							sel2 = "selected";	
-						}else{
-							sel2 = "";	
-						}  
-						%>
-
 						<select name="category" id="category" class="form-input">
-							<option value="">Elegí</option>
-							<option value="in-sale" <%= sel %> >En oferta</option>
-							<option value="visited" <%= sel2 %> >Últimos agregados</option>
+							<option value="0">Elegí</option>
+							<% for (let i = 0 ; i < categorias.length ; i ++ ) {%>
+                                <option value="<%=categorias[i].id%>" <%= (elProducto.category_id == categorias[i].id) ? "selected" : ""  %>>
+                                    <%=categorias[i].name%>
+                                </option>
+							<% } %>
 						</select>
                     </div>
+                                        
                     <div class="col-12 col-md-6">
                         <label for="age" class="form-label">Edad: *</label>
                         <input type="number" id="age" name="age" class="form-input" value="<%= elProducto.age %>" required>
@@ -91,14 +85,15 @@
                     <div class="col-12">
                         <label for="imagenControl" class="form-label">Imagen</label>
                         <input type="file" id="imagenControl" name="imagen" >
-                      </div>							
+                    </div>
+
                     <div class="col-12">
                         <label for="description" class="form-label">Descripción: *</label>
 						<textarea name="description" id="description" class="form-input"><%= elProducto.description %></textarea>
                     </div>
                     
                     <div class="col-12">
-                        <button type="submit" class="buy-now-button">Guardar</button>
+                        <button type="submit" class="buy-now-button">Guardar Producto</button>
                     </div>
                 </div>
             </form>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('partials/head', {title: 'Registracion'}) %>
+<%- include('partials/head', {title: 'Mitoy'}) %>
 <body>
 	<!-- Header -->
 	<%- include('partials/headerNavbar') %>
@@ -13,21 +13,17 @@
       </div>
     </div>
     <div class="col-8">
-      <form action="?_method=PUT" method="post" enctype="multipart/form-data" >
+      <form action="/users/edit-user/<%= elUsuario.id %>?_method=put" method="post" enctype="multipart/form-data" >
         <div class="row product-detail">
+
           <div class="col-12 col-md-12">
             <label for="text" class="form-label">Nombre y Apellido</label>
             <input type="text" value="<%= elUsuario.name %>" name="name" class="form-input" id="name" aria-describedby="name">
           </div>
-          
-          <div class="col-12 col-md-12">
-            <label for="exampleInputEmail1" class="form-label">E-mail</label>
-            <input type="text" value="<%= elUsuario.email %>" name="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-
+  
           <div class="col-12 col-md-12">
             <label for="dni" class="form-label">DNI</label>
-            <input type="number" max="8" value="<%= elUsuario.dni %>" name="dni" class="form-input" id="dni">
+            <input type="number" value="<%= elUsuario.dni %>" name="dni" class="form-input" id="dni">
           </div>	
 
           <div class="col-12 col-md-12">
@@ -39,20 +35,35 @@
             <label for="street" class="form-label">Direccion</label>
             <input type="text" value="<%= elUsuario.street %>" name="street" class="form-input" id="street">
           </div>	
-  
-          <div class="col-12 col-md-12">
-            <label for="text" class="form-label">Genero</label><br>
-            <label for="text" class="form-label">Masculino</label>
-            <input type="radio" name="gender" value="masculino"><br>
-            <label for="text" class="form-label">Femenino</label>
-            <input type="radio" name="gender" value="femenino"><br><br>
-          </div>
+          <% 
+          let selectMasculino ="";
+          let selectFemenino ="";
+          if (elUsuario.gender.trim() == "Masculino") { 
+               selectMasculino = "selected";
+          } else{
+              selectMasculino = "";
+          }
+          %>
+          <% if (elUsuario.gender.trim() == "Femenino") { 
+             selectFemenino = "selected";
+          } else{
+            selectFemenino = "";
+          }
+          %>
+          <div class="col-12 col-md-6">
+            <label for="gender" class="form-label">Genero</label>
+            <select name="gender" id="gender" class="form-input">
+                <option value="-1">Elegí el Genero</option>
+                <option value="Masculino" <%=selectMasculino%>>Masculino</option>
+                <option value="Femenino" <%=selectFemenino%>>Femenino</option>
+            </select>	
+          </div>		       
 
-          <div class="col-12 col-md-12">
+          <!-- <div class="col-12 col-md-12">
 						<label for="avatar" class="form-label">Avatar</label>
 						<input type="file" id="avatar" name="avatar">
           </div>
- 
+  -->
           <div class="col-12">
             <button type="submit" class="buy-now-button">Guardar Usuario</button>
           </div>

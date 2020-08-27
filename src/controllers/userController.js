@@ -112,24 +112,27 @@ module.exports = {
         res.render('edit-user', {elUsuario: elUsuario});
      })
   },
-  editUser: function(req, res) {
-    db.User.update({
+  editUser: function(req, res) { 
+   db.User.update({
       name: req.body.name,
-      email: req.body.email,
-      dni:  req.body.dni,
+    //email: req.body.email,
+      dni: req.body.dni,
       gender: req.body.gender,
-      street: req.body.adress,
+      street: req.body.street,
       phone: req.body.phone,
-      image: (!req.files[0]) ? this.image : req.files[0].filename      
+//      avatar: (!req.files[0]) ? this.avatar : req.files[0].filename,
     },
     {
       where: {
         id: req.params.id
       }
     })
-    .then(function() {
-      res.redirect('/editsuccess');
-    }); 
+    .then(function(user) {
+        res.redirect('/users/editsuccess');
+    }) 
+    .catch(function(err) {
+      console.log(err, req.body);
+    });
   },
   editsuccess: function (req, res) {
     res.render('edit-success');
