@@ -28,7 +28,7 @@ module.exports = {
         street: null,
         gender: null,
         avatar: null,
-        group_id: 1,
+        group_id: 0, // SE CREA UN USUARIO COMUN
         active: 0,
         remember_token: '12345678',
         createdAt: new Date(),

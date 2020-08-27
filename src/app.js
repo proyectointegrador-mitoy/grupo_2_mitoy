@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const authCookieMiddleware = require('./middlewares/authCookieMiddleware')
+const userVerifyMiddleware = require('./middlewares/userVerifyMiddleware');
+
+
 
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/main');
@@ -26,6 +29,11 @@ app.use(cookieParser());
 app.use(session({secret: 'shhhhh', resave: true, saveUninitialized: true}));
 
 app.use(authCookieMiddleware);
+app.use(userVerifyMiddleware.admin);
+app.use(userVerifyMiddleware.usuario);
+app.use(userVerifyMiddleware.session);
+
+
 
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETEno
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public

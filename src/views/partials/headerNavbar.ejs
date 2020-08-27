@@ -30,7 +30,7 @@
                                 <span class="d-none d-md-none d-lg-inline-block">Mi cuenta</span>
                             </a>
                             <div class="dropdown-menu">
-                                <% if(typeof usuarioLogueado != "undefined") { %>
+                                <% if(typeof usuarioLogueado != "undefined"  ) { %>
                                     <a  href="/users/edit-user/<%= usuarioLogueado.id %>" class="dropdown-item">
                                         <%= usuarioLogueado.email %>
                                     </a>
@@ -45,8 +45,13 @@
                                         Cerrar sesión
                                     </a>                                    
                                 <% } else { %>
-                                    <a href="/users/register" class="dropdown-item">Registro</a>
-                                    <a href="/users/login" class="dropdown-item">Iniciar sesión</a>
+
+                                    <%if (!sessVerify){%>                                    
+                                        <a href="/users/register" class="dropdown-item">Registro</a>
+                                        <a href="/users/login" class="dropdown-item">Iniciar sesión</a>
+                                    <% } else { %>
+
+                                    <% } %>      
                                 <% } %>
                             </div>
                         </li>
@@ -84,7 +89,7 @@
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1">
                 <ul class="menu demo">
-                    <li><a href="/products">Todos los Juguetes</a></li>
+                    <li><a href="/products/all-products">Todos los Juguetes</a></li>
                     <li><a href="/products/onsale">Ofertas</a></li>
                     <li><a href="/products/news">Novedades</a></li>
                     <li><a href="/Sucursales">Sucursales</a></li>

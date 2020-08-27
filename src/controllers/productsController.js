@@ -155,8 +155,14 @@ const productsController = {
 		}).then (resultados => {
 			console.log ('imprimiendo resultados' + resultados);
 			res.render ('onsale', {resultados:resultados});
-		})}
-
+		});
+	},
+	allProducts: (req, res) => {
+		db.Product.findAll()
+		.then(function(products) {
+		   res.render('all-products', { products : products , breadcrumbs : req.breadcrumbs });
+		})	
+	}
 };
 
 module.exports = productsController;

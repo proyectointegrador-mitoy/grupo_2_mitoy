@@ -5,7 +5,10 @@ const mainController = {
 	     db.Product.findAll()
 	     .then(function(products) {
 			res.render('index', { products : products });
-	     })	
+		 })    
+		 .catch(function(err) {
+			console.log(err, req.body);
+		 });
 	},
 	terminos: (req, res)=> {
 		res.render('terminos-condiciones', {breadcrumbs: req.breadcrumbs});

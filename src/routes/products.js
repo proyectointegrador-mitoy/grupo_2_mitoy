@@ -34,7 +34,7 @@ router.get('/detail/:productId/', breadcrumbs.breadcrumbsMiddleware(), productsC
 
 router.get('/shopping/', breadcrumbs.breadcrumbsMiddleware(), productsController.shopping);  
 
-router.get('/', productsController.root);  
+router.get('/all-products', productsController.allProducts);  
 
 router.get ('/news', productsController.news);
 
@@ -44,13 +44,11 @@ router.get ('/onsale', productsController.onsale);
 A ESTAS RUTAS SOLO PUEDEN ACCEDER LOS USUARIOS LOGUEADOS ADMIN
 ========== */
 
-//router.get('/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.root);  
+router.get('/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.root);  
 
 router.get('/create/', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.create); // --> ¡SOLO ADMIN!
 
-// router.post('/create/', productsValidation, upload.any(), productsController.store); 
-
-router.post('/create/', authMiddleware, upload.any(), productsController.store); 
+router.post('/create/', authMiddleware, upload.any(), breadcrumbs.breadcrumbsMiddleware(), productsController.store); 
 router.delete('/delete/:productId', authMiddleware, productsController.destroy); 
 router.get('/edit/:productId', authMiddleware, breadcrumbs.breadcrumbsMiddleware(), productsController.edit); 
 router.put('/edit/:productId', authMiddleware, productsController.update); 

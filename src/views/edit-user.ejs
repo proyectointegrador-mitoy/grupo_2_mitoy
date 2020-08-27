@@ -38,13 +38,13 @@
           <% 
           let selectMasculino ="";
           let selectFemenino ="";
-          if (elUsuario.gender.trim() == "Masculino") { 
+          if (elUsuario.gender == "Masculino") { 
                selectMasculino = "selected";
           } else{
               selectMasculino = "";
           }
           %>
-          <% if (elUsuario.gender.trim() == "Femenino") { 
+          <% if (elUsuario.gender == "Femenino") { 
              selectFemenino = "selected";
           } else{
             selectFemenino = "";
