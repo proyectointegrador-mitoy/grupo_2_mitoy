@@ -8,7 +8,7 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
-    "datatables.net": "^1.10.21",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.21",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
